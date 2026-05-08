@@ -9,6 +9,62 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Admin</title>
     <link rel="stylesheet" href="admin.css" class="css" />
+
+    <!-- for using charts -->
+    <script
+      type="text/javascript"
+      src="https://www.gstatic.com/charts/loader.js"
+    ></script>
+    <script type="text/javascript">
+      google.charts.load("current", { packages: ["corechart"] });
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ["Course", "Amount"],
+          ["BCA", 11],
+          ["MCA", 7],
+          ["MBA", 2],
+          ["Mtech", 5],
+          ["Btech", 13],
+        ]);
+
+        var options = {
+          title: "Total Courses",
+          backgroundColor: "transparent",
+        };
+
+        var chart = new google.visualization.PieChart(
+          document.getElementById("piechart"),
+        );
+
+        chart.draw(data, options);
+
+        // line chart ****
+
+        var data = google.visualization.arrayToDataTable([
+          ["Month", "Total Students"],
+          ["2023", 1000],
+          ["2024", 1170],
+          ["2025", 660],
+          ["2026", 1030],
+        ]);
+
+        var options = {
+          title: "Student Enrollment Trend",
+          backgroundColor: "transparent",
+          colors: ["#2D5A54"],
+          curveType: "function",
+          legend: { position: "bottom" },
+        };
+
+        var chart = new google.visualization.LineChart(
+          document.getElementById("curve_chart"),
+        );
+
+        chart.draw(data, options);
+      }
+    </script>
   </head>
   <body>
     <div class="main">
@@ -16,18 +72,28 @@
         <h1 class="adminHead">Admin</h1>
         <div class="itemsBox">
           <ul class="list_items">
-            <li><i class="ri-home-4-fill"></i> Dashboard</li>
-            <li><i class="ri-graduation-cap-fill"></i> Students</li>
-            <li><i class="ri-presentation-fill"></i> Teachers</li>
-            <li><i class="ri-book-3-fill"></i> Courses</li>
-            <li><i class="ri-logout-box-fill"></i> Logout</li>
+            <li class="items"><i class="ri-home-4-fill"></i> Dashboard</li>
+            <li class="items">
+              <i class="ri-graduation-cap-fill"></i> Students
+            </li>
+            <li class="items"><i class="ri-presentation-fill"></i> Teachers</li>
+            <li class="items"><i class="ri-book-3-fill"></i> Courses</li>
+            <li id="logoOut" class="items">
+              <i class="ri-logout-box-fill"></i> Logout
+            </li>
           </ul>
         </div>
       </div>
       <div class="rightContent">
-        <div class="nav"></div>
+        <div class="nav">
+          <div class="navLogo">EduPortal</div>
+          <div class="admin_user">
+            <h1 class="admin_username">Username</h1>
+            <div class="adminLogo"><i class="ri-admin-fill"></i></div>
+          </div>
+        </div>
         <div class="overviewSect">
-          <h1>Overview</h1>
+          <h1 class="mainHead">Overview</h1>
           <div class="cardSect">
             <div id="cards" class="card1">
               <div class="data1">
@@ -57,6 +123,10 @@
               </div>
             </div>
           </div>
+        </div>
+        <div class="graphSect">
+          <div id="piechart" class="graph"></div>
+          <div id="curve_chart" class="graph"></div>
         </div>
       </div>
     </div>
