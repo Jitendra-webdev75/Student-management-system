@@ -68,6 +68,19 @@ body {
 .items:active {
   scale: 0.9;
 }
+
+a {
+  text-decoration: none;
+  color: aliceblue;
+}
+.active {
+  background-color: rgba(22, 146, 224, 0.914);
+  color: aliceblue;
+  text-decoration: none;
+  border-radius: 5px;
+  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.3);
+}
+
 .rightContent {
   height: 100vh;
   width: 80vw;
