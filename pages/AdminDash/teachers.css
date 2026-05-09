@@ -1,0 +1,34 @@
+.facul_content {
+  height: 56vh;
+  width: 75vw;
+  border: 2px solid black;
+  overflow-y: scroll;
+}
+
+#topBar {
+  height: 7vh;
+  width: 75vw;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 15rem;
+  padding: 3px;
+}
+
+#serachBar {
+  height: 6vh;
+  width: 20vw;
+}
+#searBtn {
+  height: 6vh;
+  width: 8vw;
+}
+
+#addBtn {
+  height: 6vh;
+  width: 8vw;
+}
+#updatBtn {
+  height: 6vh;
+  width: 8vw;
+}
