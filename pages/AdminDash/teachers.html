@@ -38,6 +38,74 @@
         </div>
       </div>
       <div class="rightContent">
+        <div id="teacherPopup" class="popup-overlay">
+          <div class="popup-content">
+            <button class="close-btn">&times;</button>
+            <h3>Add New Teacher</h3>
+
+            <form id="teacherForm">
+              <div class="input-group">
+                <label>Teacher ID</label>
+                <input
+                  id="teachId"
+                  type="text"
+                  placeholder="Enter ID"
+                  required
+                />
+              </div>
+
+              <div class="input-group">
+                <label>Full Name</label>
+                <input
+                  id="teachName"
+                  type="text"
+                  placeholder="Enter Name"
+                  required
+                />
+              </div>
+
+              <div class="input-group">
+                <label>Email ID</label>
+                <input
+                  id="teachEmail"
+                  type="email"
+                  placeholder="example@college.com"
+                  required
+                />
+              </div>
+
+              <div class="input-group">
+                <label>Department</label>
+                <select required id="teachDepart">
+                  <option value="">Select Department</option>
+                  <option value="BCA">BCA</option>
+                  <option value="B.Tech">B.Tech</option>
+                  <option value="MCA">MCA</option>
+                </select>
+              </div>
+
+              <div class="input-group">
+                <label>Subject</label>
+                <input
+                  id="teachSubj"
+                  type="text"
+                  placeholder="e.g. Java, DBMS"
+                  required
+                />
+              </div>
+
+              <div class="input-group">
+                <label>Status</label>
+                <select required id="teachStatus">
+                  <option value="Active">Active</option>
+                  <option value="Inactive">Inactive</option>
+                </select>
+              </div>
+
+              <button type="submit" class="submit-btn">Add Teacher</button>
+            </form>
+          </div>
+        </div>
         <div class="overviewSect">
           <h1 class="mainHead">Overview</h1>
           <div class="cardSect">
@@ -73,16 +141,76 @@
         <div class="facul_content">
           <div id="topBar">
             <div class="search">
-              <input type="text" id="serachBar" />
-              <button id="searBtn">Search</button>
+              <input type="text" id="searchBar" placeholder="search..." />
+              <button id="searBtn">
+                <i class="ri-search-line"></i> Search
+              </button>
             </div>
             <div id="handler">
-              <button id="addBtn">Add</button>
-              <button id="updatBtn">Update</button>
+              <button id="addBtn">
+                Add <i class="ri-add-circle-fill"></i>
+              </button>
+              <button id="clearBtn">
+                Reset <i class="ri-reset-right-line"></i>
+              </button>
             </div>
+          </div>
+          <div class="faculty_manag">
+            <div id="mangerHead">
+              <h1 class="head">Teacher Id</h1>
+              <h1 class="head">Name</h1>
+              <h1 class="head">Email Id</h1>
+              <h1 class="head">Department</h1>
+              <h1 class="head">Subject</h1>
+              <h1 class="head">Status</h1>
+            </div>
+            <ul id="todo"></ul>
           </div>
         </div>
       </div>
     </div>
   </body>
+  <script>
+    let teachForm = document.querySelector(".popup-overlay");
+    let addBtn = document.querySelector("#addBtn");
+    let clearBtn = document.querySelector("#clearBtn");
+    let closeBtn = document.querySelector(".close-btn");
+    let submitBtn = document.querySelector(".submit-btn");
+    let todo = document.getElementById("todo");
+
+    addBtn.addEventListener("click", () => {
+      teachForm.style.display = "flex";
+    });
+    clearBtn.addEventListener("click", () => {
+      todo.remove();
+    });
+    closeBtn.addEventListener("click", () => {
+      teachForm.style.display = "none";
+    });
+
+    submitBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      const id = document.getElementById("teachId").value;
+      const name = document.getElementById("teachName").value;
+      const email = document.getElementById("teachEmail").value;
+      const Department = document.getElementById("teachDepart").value;
+      const subj = document.getElementById("teachSubj").value;
+      const status = document.getElementById("teachStatus").value;
+
+      // console.log(id, name, email, Department, subj, status);
+      const todoLi = document.createElement("li");
+      todoLi.classList.add("todoLists");
+      todoLi.innerHTML = `<span>${id}<span/> <span>${name}<span/> <span>${email}<span/> <span>${Department}<span/> <span>${subj}<span/> <span>${status}<span/> <button>X<button/> `;
+
+      todo.appendChild(todoLi);
+
+      // for clear input
+      document.getElementById("teachId").value = "";
+      document.getElementById("teachName").value = "";
+      document.getElementById("teachEmail").value = "";
+      document.getElementById("teachDepart").value = "";
+      document.getElementById("teachSubj").value = "";
+      document.getElementById("teachStatus").value = "";
+    });
+  </script>
 </html>
