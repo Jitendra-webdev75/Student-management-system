@@ -157,12 +157,12 @@
           </div>
           <div class="faculty_manag">
             <div id="mangerHead">
-              <h1 class="head">Teacher Id</h1>
-              <h1 class="head">Name</h1>
-              <h1 class="head">Email Id</h1>
-              <h1 class="head">Department</h1>
-              <h1 class="head">Subject</h1>
-              <h1 class="head">Status</h1>
+              <h1 id="headId" class="head">Teacher Id</h1>
+              <h1 id="headName" class="head">Name</h1>
+              <h1 id="headEmail" class="head">Email Id</h1>
+              <h1 id="headDep" class="head">Department</h1>
+              <h1 id="headSub" class="head">Subject</h1>
+              <h1 id="headStatus" class="head">Status</h1>
             </div>
             <ul id="todo"></ul>
           </div>
@@ -184,6 +184,7 @@
     clearBtn.addEventListener("click", () => {
       todo.remove();
     });
+
     closeBtn.addEventListener("click", () => {
       teachForm.style.display = "none";
     });
@@ -200,7 +201,18 @@
       // console.log(id, name, email, Department, subj, status);
       const todoLi = document.createElement("li");
       todoLi.classList.add("todoLists");
-      todoLi.innerHTML = `<span>${id}<span/> <span>${name}<span/> <span>${email}<span/> <span>${Department}<span/> <span>${subj}<span/> <span>${status}<span/> <button>X<button/> `;
+      todoLi.innerHTML = `
+    <div class = "head2">${id}</div>
+    <div class = "head2">${name}</div>
+    <div class = "head2">${email}</div>
+    <div class = "head2">${Department}</div>
+    <div class = "head2">${subj}</div>
+    <div class = "head2">${status}</div>
+    <div class="actions">
+      <div class="edit-btn actBtns"><i class="ri-pencil-fill"></i></div>
+      <div class="delete-btn actBtns"> <i class="ri-delete-bin-5-fill"></i></div>
+    </div>
+    `;
 
       todo.appendChild(todoLi);
 
@@ -211,6 +223,30 @@
       document.getElementById("teachDepart").value = "";
       document.getElementById("teachSubj").value = "";
       document.getElementById("teachStatus").value = "";
+    });
+
+    todo.addEventListener("click", (e) => {
+      if (e.target.closest(".delete-btn")) {
+        if (confirm("Are you sure to delte this list")) {
+          e.target.closest(".todoLists").remove();
+        }
+      }
+    });
+    todo.addEventListener("click", (e) => {
+      if (e.target.closest(".edit-btn")) {
+        const row = e.target.closest(".todoLists");
+        const val = row.querySelectorAll(".head2");
+
+        document.getElementById("teachId").value = val[0].textContent;
+        document.getElementById("teachName").value = val[1].textContent;
+        document.getElementById("teachEmail").value = val[2].textContent;
+        document.getElementById("teachDepart").value = val[3].textContent;
+        document.getElementById("teachSubj").value = val[4].textContent;
+        document.getElementById("teachStatus").value = val[5].textContent;
+
+        teachForm.style.display = "flex";
+        row.remove();
+      }
     });
   </script>
 </html>

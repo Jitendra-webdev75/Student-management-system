@@ -1,10 +1,9 @@
 .facul_content {
   height: 57vh;
-  width: 75vw;
+  width: 80vw;
   box-shadow: 10px 10px 40px rgba(0, 0, 0, 0.5);
   border-radius: 10px;
-  overflow-y: hidden;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 .popup-overlay {
@@ -90,7 +89,7 @@
 
 #topBar {
   height: 7vh;
-  width: 75vw;
+  width: 80vw;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -172,7 +171,7 @@
 
 .faculty_manag {
   height: 56vh;
-  width: 74vw;
+  width: 79vw;
   display: flex;
   flex-direction: column;
   padding: 5px;
@@ -182,39 +181,64 @@
 }
 
 #mangerHead {
-  display: flex;
-  justify-content: space-around;
-  gap: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1.5fr 2fr 1fr 1fr 1fr;
   padding: 10px;
+  text-align: center;
 }
 
 .head {
   font-size: 1.3rem;
-  width: 15vw;
+  width: 11vw;
   border-right: 2px solid #2c3e50;
   font-weight: bold;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   color: #273848e3;
 }
+#headEmail {
+  width: 14vw;
+}
 .todoLists {
-  height: 5vh;
-  width: 72vw;
-  display: flex;
+  height: 8vh;
+  width: 75vw;
+  display: grid;
+  grid-template-columns: 1fr 1.5fr 2fr 1fr 1fr 1fr;
   box-shadow: 5px 5px 14px rgba(0, 0, 0, 0.2);
   padding: 7px;
+  padding-left: 10px;
   border-radius: 10px;
   color: #313647;
+  gap: 10px;
 }
 
 #todo {
   display: flex;
-  align-items: center;
   flex-direction: column;
+  align-items: center;
+
   gap: 10px;
+  padding-left: 2rem;
 }
 
-span {
-  display: flex;
-  gap: 6rem;
+.head2 {
   font-size: 1.3rem;
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  position: relative;
+  left: 65vw;
+}
+
+.actBtns {
+  font-size: 1.3rem;
+  cursor: pointer;
+}
+.actBtns:hover {
+  color: #1e88e5;
+}
+.actBtns:active {
+  scale: 96%;
 }
