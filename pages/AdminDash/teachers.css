@@ -1,6 +1,9 @@
 .facul_content {
-  height: 57vh;
+  height: 59vh;
   width: 80vw;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
   box-shadow: 10px 10px 40px rgba(0, 0, 0, 0.5);
   border-radius: 10px;
   overflow: hidden;
@@ -170,17 +173,20 @@
 }
 
 .faculty_manag {
-  height: 56vh;
   width: 79vw;
   display: flex;
   flex-direction: column;
   padding: 5px;
   padding-left: 10px;
   background-color: transparent;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
 #mangerHead {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background-color: aliceblue;
   display: grid;
   grid-template-columns: 1fr 1.5fr 2fr 1fr 1fr 1fr;
   padding: 10px;
@@ -199,7 +205,7 @@
   width: 14vw;
 }
 .todoLists {
-  height: 8vh;
+  min-height: 8vh;
   width: 75vw;
   display: grid;
   grid-template-columns: 1fr 1.5fr 2fr 1fr 1fr 1fr;
@@ -209,13 +215,13 @@
   border-radius: 10px;
   color: #313647;
   gap: 10px;
+  margin-bottom: 5px;
 }
 
 #todo {
   display: flex;
   flex-direction: column;
   align-items: center;
-
   gap: 10px;
   padding-left: 2rem;
 }
