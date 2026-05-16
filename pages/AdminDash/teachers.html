@@ -201,31 +201,35 @@
       const subj = document.getElementById("teachSubj").value;
       const status = document.getElementById("teachStatus").value;
 
-      // console.log(id, name, email, Department, subj, status);
-      const todoLi = document.createElement("li");
-      todoLi.classList.add("todoLists");
-      todoLi.innerHTML = `
-    <div class = "head2">${id}</div>
-    <div class = "head2">${name}</div>
-    <div class = "head2">${email}</div>
-    <div class = "head2">${Department}</div>
-    <div class = "head2">${subj}</div>
-    <div class = "head2">${status}</div>
-    <div class="actions">
+      if (id || name || email || Department || subj != "") {
+        const todoLi = document.createElement("li");
+
+        todoLi.classList.add("todoLists");
+        todoLi.innerHTML = `
+      <div class = "head2">${id}</div>
+      <div class = "head2">${name}</div>
+      <div class = "head2">${email}</div>
+      <div class = "head2">${Department}</div>
+      <div class = "head2">${subj}</div>
+      <div class = "head2">${status}</div>
+      <div class="actions">
       <div class="edit-btn actBtns"><i class="ri-pencil-fill"></i></div>
       <div class="delete-btn actBtns"> <i class="ri-delete-bin-5-fill"></i></div>
-    </div>
-    `;
+      </div>
+      `;
 
-      todo.appendChild(todoLi);
+        todo.appendChild(todoLi);
 
-      // for clear input
-      document.getElementById("teachId").value = "";
-      document.getElementById("teachName").value = "";
-      document.getElementById("teachEmail").value = "";
-      document.getElementById("teachDepart").value = "";
-      document.getElementById("teachSubj").value = "";
-      document.getElementById("teachStatus").value = "";
+        // for clear input
+        document.getElementById("teachId").value = "";
+        document.getElementById("teachName").value = "";
+        document.getElementById("teachEmail").value = "";
+        document.getElementById("teachDepart").value = "";
+        document.getElementById("teachSubj").value = "";
+        document.getElementById("teachStatus").value = "";
+      } else {
+        alert("Please fill input fields properly!");
+      }
     });
 
     todo.addEventListener("click", (e) => {

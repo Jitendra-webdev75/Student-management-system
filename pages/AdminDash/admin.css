@@ -109,6 +109,9 @@ a {
 .navLogo {
   font-size: 22px;
   font-weight: bold;
+  background: linear-gradient(#2853ef, #4c8ce4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 .admin_user {
   display: flex;
