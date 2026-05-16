@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>course</title>
+    <link rel="stylesheet" href="admin.css" />
+    <link rel="stylesheet" href="course.css" />
+
+    <!-- for graph -->
+    <script
+      type="text/javascript"
+      src="https://www.gstatic.com/charts/loader.js"
+    ></script>
+    <script type="text/javascript">
+      google.charts.load("current", { packages: ["corechart"] });
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ["Task", "Hours per Day"],
+          ["Total Courses", 11],
+          ["Active Courses", 2],
+          ["Upcoming Courses", 2],
+        ]);
+
+        var options = {
+          title: "My Daily Activities",
+          pieHole: 0.4,
+          backgroundColor: "transparent",
+        };
+
+        var chart = new google.visualization.PieChart(
+          document.getElementById("donutchart"),
+        );
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+  <body>
+    <div class="main">
+      <div class="leftpannel">
+        <h1 class="adminHead">Courses</h1>
+        <div class="itemsBox">
+          <ul class="list_items">
+            <a href="Admin_Dashboard.html"
+              ><li class="items">
+                <i class="ri-home-4-fill"></i> Dashboard
+              </li></a
+            >
+            <li class="items">
+              <i class="ri-graduation-cap-fill"></i> Students
+            </li>
+            <a href="teachers.html"
+              ><li class="items">
+                <i class="ri-presentation-fill"></i> Teachers
+              </li></a
+            >
+            <a href="course.html">
+              <li class="items active">
+                <i class="ri-book-3-fill"></i> Courses
+              </li>
+            </a>
+
+            <li id="logoOut" class="items">
+              <i class="ri-logout-box-fill"></i> Logout
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="rightContent">
+        <div id="coursePopup" class="popup-overlay">
+          <div class="popup-content">
+            <button class="close-btn">&times;</button>
+            <h3>Add New Course</h3>
+
+            <form id="courseForm">
+              <div class="input-group">
+                <label>Course Code</label>
+                <input
+                  id="Course_Id"
+                  type="number"
+                  placeholder="Enter code"
+                  required
+                />
+              </div>
+
+              <div class="input-group">
+                <label>Course Name</label>
+                <input
+                  id="CourseName"
+                  type="text"
+                  placeholder="Enter Name"
+                  required
+                />
+              </div>
+
+              <div class="input-group">
+                <label>Instructor</label>
+
+                <input
+                  id="InstrName"
+                  type="text"
+                  placeholder="Enter Name"
+                  required
+                />
+              </div>
+
+              <div class="input-group">
+                <label>Students</label>
+                <input id="StudCount" type="number" required />
+              </div>
+
+              <div class="input-group">
+                <label>Status</label>
+                <select required id="courseStatus">
+                  <option value="Active">Active</option>
+                  <option value="Inactive">Inactive</option>
+                </select>
+              </div>
+
+              <button type="submit" class="submit-btn">Add Course</button>
+            </form>
+          </div>
+        </div>
+        <div class="overviewSect">
+          <!-- <h1 class="mainHead">Overview</h1> -->
+          <div class="cardSect">
+            <div id="cards" class="card1">
+              <div id="card_logo" class="logo1">
+                <i class="ri-book-open-fill"></i>
+              </div>
+              <div class="data1">
+                <h1>1500</h1>
+                <h2>Total Courses</h2>
+              </div>
+            </div>
+            <div id="cards" class="card2">
+              <div class="data2">
+                <h1>55</h1>
+                <h2>Active Courses</h2>
+              </div>
+              <div id="card_logo" class="logo2">
+                <i class="ri-book-open-fill"></i>
+              </div>
+            </div>
+            <div id="cards" class="card3">
+              <div class="data3">
+                <h1>20</h1>
+                <h2>Upcoming Courses</h2>
+              </div>
+              <div id="card_logo" class="logo3">
+                <i class="ri-book-3-fill"></i>
+              </div>
+            </div>
+          </div>
+          <div class="content2">
+            <div class="midContent">
+              <div class="coursOverview">
+                <div id="donutchart" style="width: 47vw; height: 37vh"></div>
+              </div>
+              <div class="illustr"></div>
+            </div>
+            <div class="bottomSect">
+              <div class="courseHandler">
+                <div class="cours_content">
+                  <div id="topBar">
+                    <div class="search">
+                      <input
+                        type="text"
+                        id="searchBar"
+                        placeholder="search..."
+                      />
+                      <button id="searBtn">
+                        <i class="ri-search-line"></i> Search
+                      </button>
+                    </div>
+                    <div id="handler">
+                      <button id="addBtn">
+                        Add <i class="ri-add-circle-fill"></i>
+                      </button>
+                      <button id="clearBtn">
+                        Reset <i class="ri-reset-right-line"></i>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="Course_manag">
+                    <div id="Cour_mangerHead">
+                      <h1 id="headId" class="head">Course code</h1>
+                      <h1 id="headName" class="head">Course Name</h1>
+                      <h1 id="headEmail" class="head">Instructor</h1>
+                      <h1 id="headDep" class="head">Students</h1>
+                      <h1 id="headStatus" class="head">Status</h1>
+                    </div>
+                    <ul id="Cour_todo"></ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    let courseForm = document.querySelector(".popup-overlay");
+    let addBtn = document.querySelector("#addBtn");
+    let clearBtn = document.querySelector("#clearBtn");
+    let closeBtn = document.querySelector(".close-btn");
+    let submitBtn = document.querySelector(".submit-btn");
+    let todo = document.getElementById("Cour_todo");
+
+    addBtn.addEventListener("click", () => {
+      courseForm.style.display = "flex";
+    });
+    clearBtn.addEventListener("click", () => {
+      todo.innerHTML = "";
+    });
+
+    closeBtn.addEventListener("click", () => {
+      courseForm.style.display = "none";
+    });
+
+    submitBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      const id = document.getElementById("Course_Id").value;
+      const name = document.getElementById("CourseName").value;
+      const InstrName = document.getElementById("InstrName").value;
+      const StudCount = document.getElementById("StudCount").value;
+      const status = document.getElementById("courseStatus").value;
+
+      // console.log(id, name, email, Department, subj, status);
+      const todoLi = document.createElement("li");
+      todoLi.classList.add("todoLists");
+      todoLi.innerHTML = `
+    <div class = "head2">${id}</div>
+    <div class = "head2">${name}</div>
+    <div class = "head2">${InstrName}</div>
+    <div class = "head2">${StudCount}</div>
+    <div class = "head2">${status}</div>
+    <div class="actions">
+      <div class="edit-btn actBtns"><i class="ri-pencil-fill"></i></div>
+      <div class="delete-btn actBtns"> <i class="ri-delete-bin-5-fill"></i></div>
+    </div>
+    `;
+
+      todo.appendChild(todoLi);
+
+      // for clear input
+      document.getElementById("Course_Id").value = "";
+      document.getElementById("CourseName").value = "";
+      document.getElementById("InstrName").value = "";
+      document.getElementById("StudCount").value = "";
+      document.getElementById("courseStatus").value = "";
+    });
+
+    todo.addEventListener("click", (e) => {
+      if (e.target.closest(".delete-btn")) {
+        if (confirm("Are you sure to delte this list")) {
+          e.target.closest(".todoLists").innerHTML = "";
+        }
+      }
+    });
+    todo.addEventListener("click", (e) => {
+      if (e.target.closest(".edit-btn")) {
+        const row = e.target.closest(".todoLists");
+        const val = row.querySelectorAll(".head2");
+
+        document.getElementById("Course_Id").value = val[0].textContent;
+        document.getElementById("CourseName").value = val[1].textContent;
+        document.getElementById("InstrName").value = val[2].textContent;
+        document.getElementById("StudCount").value = val[3].textContent;
+        document.getElementById("courseStatus").value = val[4].textContent;
+        courseForm.style.display = "flex";
+        row.remove();
+      }
+    });
+  </script>
+</html>
