@@ -23,10 +23,11 @@ body {
   flex-direction: column;
   align-items: center;
   padding: 10px;
+  padding-top: 30px;
   gap: 40px;
 }
 .adminHead {
-  font-size: 2rem;
+  font-size: 1.4rem;
   color: whitesmoke;
   font-family:
     "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
@@ -44,7 +45,7 @@ body {
   display: flex;
   flex-direction: column;
   margin-left: 20px;
-  gap: 55px;
+  gap: 25px;
   list-style: none;
 }
 
@@ -126,6 +127,7 @@ a {
 .admin_username {
   font-size: 15px;
   font-weight: bold;
+  color: #2d3036;
 }
 
 .adminLogo {
@@ -163,10 +165,10 @@ a {
 }
 
 .card1 {
-  border-left: 5px solid #427ab5;
+  border-left: 5px solid #69ebe7;
 }
 .card2 {
-  border-left: 5px solid #44a194;
+  border-left: 5px solid #69ebe7;
 }
 .card3 {
   border-left: 5px solid #69ebe7;
