@@ -1,5 +1,4 @@
 body {
-  font-family: "Plus Jakarta Sans", sans-serif;
   background-color: #f0f4f8;
   color: #1e293b;
   min-height: 100vh;
@@ -145,14 +144,14 @@ body {
 }
 
 .stat-info h3 {
-  font-size: 22px;
+  font-size: 1.6rem;
   font-weight: 700;
   color: #0f172a;
   line-height: 1.2;
 }
 
 .stat-info p {
-  font-size: 12px;
+  font-size: 20px;
   color: #64748b;
   margin-top: 2px;
 }

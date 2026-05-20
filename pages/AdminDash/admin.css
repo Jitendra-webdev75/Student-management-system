@@ -62,8 +62,6 @@ body {
   cursor: pointer;
 }
 
-
-
 .items:active {
   scale: 0.9;
 }
@@ -156,6 +154,7 @@ a {
   height: 16vh;
   width: 22vw;
   display: flex;
+  background-color: #ffffff;
   justify-content: space-around;
   align-items: center;
   box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.3);
