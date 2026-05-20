@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Students - Admin Portal</title>
+    <link rel="stylesheet" href="admin.css" />
+    <link rel="stylesheet" href="Stud_sect.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="main">
+      <div class="leftpannel">
+        <h1 class="adminHead"><i class="ri-user-fill"></i> Students</h1>
+        <div class="itemsBox">
+          <ul class="list_items">
+            <a href="Admin_Dashboard.html"
+              ><li class="items">
+                <i class="ri-home-4-fill"></i> Dashboard
+              </li></a
+            >
+            <a href="Stud_sect.html">
+              <li class="items active">
+                <i class="ri-graduation-cap-fill"></i> Students
+              </li>
+            </a>
+            <a href="teachers.html"
+              ><li class="items">
+                <i class="ri-presentation-fill"></i> Teachers
+              </li></a
+            >
+            <a href="course.html">
+              <li class="items"><i class="ri-book-3-fill"></i> Courses</li>
+            </a>
+            <li id="logoOut" class="items">
+              <i class="ri-logout-box-r-line"></i> Logout
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="rightContent">
+        <div class="topbar">
+          <div class="topbar-left">
+            <h2>Students</h2>
+            <p>Manage and view student information</p>
+          </div>
+          <div class="topbar-right">
+            <div class="search-box">
+              <i class="fas fa-search"></i>
+              <input type="text" placeholder="Search students..." />
+            </div>
+            <button class="btn-add">
+              <i class="fas fa-plus"></i> Add Student
+            </button>
+          </div>
+        </div>
+
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-icon blue"><i class="fas fa-users"></i></div>
+            <div class="stat-info">
+              <h3>245</h3>
+              <p>Total Students</p>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon green"><i class="fas fa-user-check"></i></div>
+            <div class="stat-info">
+              <h3>212</h3>
+              <p>Active Students</p>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon orange">
+              <i class="fas fa-user-xmark"></i>
+            </div>
+            <div class="stat-info">
+              <h3>18</h3>
+              <p>Inactive Students</p>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon purple"><i class="fas fa-user-plus"></i></div>
+            <div class="stat-info">
+              <h3>15</h3>
+              <p>New This Month</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="table-section">
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>First Name <i class="fas fa-sort"></i></th>
+                  <th>Last Name <i class="fas fa-sort"></i></th>
+                  <th>Father's Name <i class="fas fa-sort"></i></th>
+                  <th>Date of Birth <i class="fas fa-sort"></i></th>
+                  <th>Contact No. <i class="fas fa-sort"></i></th>
+                  <th>Email Address <i class="fas fa-sort"></i></th>
+                  <th>Qualification <i class="fas fa-sort"></i></th>
+                  <th>Course <i class="fas fa-sort"></i></th>
+                  <th>Status <i class="fas fa-sort"></i></th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>Rohan</td>
+                  <td>Sharma</td>
+                  <td>Rajesh Sharma</td>
+                  <td>12-04-2001</td>
+                  <td>9876543210</td>
+                  <td>rohan.sharma@email.com</td>
+                  <td>B.Sc</td>
+                  <td>Web Development</td>
+                  <td><span class="badge active">Active</span></td>
+                  <td class="actions">
+                    <button class="act-btn edit">
+                      <i class="fas fa-pen"></i>
+                    </button>
+                    <button class="act-btn delete">
+                      <i class="fas fa-trash"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>Anjali</td>
+                  <td>Verma</td>
+                  <td>Suresh Verma</td>
+                  <td>23-08-2002</td>
+                  <td>9123456780</td>
+                  <td>anjali.verma@email.com</td>
+                  <td>B.Com</td>
+                  <td>Data Science</td>
+                  <td><span class="badge active">Active</span></td>
+                  <td class="actions">
+                    <button class="act-btn edit">
+                      <i class="fas fa-pen"></i>
+                    </button>
+                    <button class="act-btn delete">
+                      <i class="fas fa-trash"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>Vikram</td>
+                  <td>Patel</td>
+                  <td>Mahesh Patel</td>
+                  <td>05-01-2001</td>
+                  <td>9988776655</td>
+                  <td>vikram.patel@email.com</td>
+                  <td>B.Tech</td>
+                  <td>Cyber Security</td>
+                  <td><span class="badge inactive">Inactive</span></td>
+                  <td class="actions">
+                    <button class="act-btn edit">
+                      <i class="fas fa-pen"></i>
+                    </button>
+                    <button class="act-btn delete">
+                      <i class="fas fa-trash"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td>Sneha</td>
+                  <td>Iyer</td>
+                  <td>Ramesh Iyer</td>
+                  <td>17-11-2002</td>
+                  <td>9871234567</td>
+                  <td>sneha.iyer@email.com</td>
+                  <td>M.Sc</td>
+                  <td>UI/UX Design</td>
+                  <td><span class="badge active">Active</span></td>
+                  <td class="actions">
+                    <button class="act-btn edit">
+                      <i class="fas fa-pen"></i>
+                    </button>
+                    <button class="act-btn delete">
+                      <i class="fas fa-trash"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>5</td>
+                  <td>Arjun</td>
+                  <td>Mehta</td>
+                  <td>Nitin Mehta</td>
+                  <td>29-06-2001</td>
+                  <td>9001122334</td>
+                  <td>arjun.mehta@email.com</td>
+                  <td>B.Tech</td>
+                  <td>Web Development</td>
+                  <td><span class="badge active">Active</span></td>
+                  <td class="actions">
+                    <button class="act-btn edit">
+                      <i class="fas fa-pen"></i>
+                    </button>
+                    <button class="act-btn delete">
+                      <i class="fas fa-trash"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>6</td>
+                  <td>Pooja</td>
+                  <td>Singh</td>
+                  <td>Manoj Singh</td>
+                  <td>02-03-2002</td>
+                  <td>8945612300</td>
+                  <td>pooja.singh@email.com</td>
+                  <td>B.A</td>
+                  <td>Digital Marketing</td>
+                  <td><span class="badge inactive">Inactive</span></td>
+                  <td class="actions">
+                    <button class="act-btn edit">
+                      <i class="fas fa-pen"></i>
+                    </button>
+                    <button class="act-btn delete">
+                      <i class="fas fa-trash"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>7</td>
+                  <td>Karan</td>
+                  <td>Joshi</td>
+                  <td>Deepak Joshi</td>
+                  <td>14-09-2001</td>
+                  <td>9870098765</td>
+                  <td>karan.joshi@email.com</td>
+                  <td>M.Tech</td>
+                  <td>Data Science</td>
+                  <td><span class="badge active">Active</span></td>
+                  <td class="actions">
+                    <button class="act-btn edit">
+                      <i class="fas fa-pen"></i>
+                    </button>
+                    <button class="act-btn delete">
+                      <i class="fas fa-trash"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>8</td>
+                  <td>Neha</td>
+                  <td>Gupta</td>
+                  <td>Amit Gupta</td>
+                  <td>07-12-2002</td>
+                  <td>9123344556</td>
+                  <td>neha.gupta@email.com</td>
+                  <td>B.Com</td>
+                  <td>Cyber Security</td>
+                  <td><span class="badge active">Active</span></td>
+                  <td class="actions">
+                    <button class="act-btn edit">
+                      <i class="fas fa-pen"></i>
+                    </button>
+                    <button class="act-btn delete">
+                      <i class="fas fa-trash"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>9</td>
+                  <td>Rahul</td>
+                  <td>Yadav</td>
+                  <td>Ravi Yadav</td>
+                  <td>19-07-2001</td>
+                  <td>9000988776</td>
+                  <td>rahul.yadav@email.com</td>
+                  <td>B.Sc</td>
+                  <td>UI/UX Design</td>
+                  <td><span class="badge inactive">Inactive</span></td>
+                  <td class="actions">
+                    <button class="act-btn edit">
+                      <i class="fas fa-pen"></i>
+                    </button>
+                    <button class="act-btn delete">
+                      <i class="fas fa-trash"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>10</td>
+                  <td>Simran</td>
+                  <td>Kaur</td>
+                  <td>Gurmeet Kaur</td>
+                  <td>25-10-2002</td>
+                  <td>9112233445</td>
+                  <td>simran.kaur@email.com</td>
+                  <td>M.Com</td>
+                  <td>Digital Marketing</td>
+                  <td><span class="badge active">Active</span></td>
+                  <td class="actions">
+                    <button class="act-btn edit">
+                      <i class="fas fa-pen"></i>
+                    </button>
+                    <button class="act-btn delete">
+                      <i class="fas fa-trash"></i>
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
