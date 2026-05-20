@@ -1,0 +1,206 @@
+body {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: aliceblue;
+
+}
+
+.main {
+    margin-left: 310px;
+
+}
+
+.head {
+    font-size: 24px;
+}
+
+.navbar {
+    margin-top: 20px;
+}
+
+.navlink {
+    display: flex;
+    justify-content: space-between;
+}
+
+.card {
+    background-color: rgb(220, 231, 230);
+    background-color: white;
+    display: flex;
+    padding: 5px 70px;
+    border: 1px solid grey;
+    border-radius: 5px;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 5px 5px 10px grey;
+}
+.logo {
+
+    background-color: rgb(241, 222, 222);
+    padding: 15px;
+    height: 45px;
+    margin-right: 14px;
+    color: rgb(120, 218, 250);
+    border-radius: 50%;
+    margin-top: 10px;
+}
+
+.text span {
+    font-size: 26px;
+    position: relative;
+    top: 0px;
+}
+
+.text p {
+    color: rgb(99, 98, 98);
+    position: relative;
+    top: 5px;
+
+}
+
+.logo2 {
+    background-color: rgb(179, 234, 179);
+    color: green;
+}
+
+.logo3 {
+    background-color: rgb(251, 244, 183);
+    color: rgb(162, 162, 1);
+}
+
+.head2 {
+    margin-top: 20px;
+    background-color: white;
+    border: 1px solid grey;
+    padding: 10px 10px;
+    box-shadow: 5px 5px 10px grey;
+    border-radius: 4px;
+}
+
+.head3 {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+    font-weight: 700;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.course1 {
+    display: flex;
+    justify-content: space-between;
+}
+
+img {
+    width: 35px;
+    height: 40px;
+    padding-top: 15px;
+    padding-right: 5px;
+}
+
+.course1-details {
+    display: grid;
+
+}
+
+.course-text {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+}
+
+.instructor {
+    display: flex;
+    padding-top: 20px;
+    position: relative;
+
+    gap: 10px;
+
+    i {
+        font-size: 26px;
+    }
+
+    p {
+        font-size: 20px;
+    }
+}
+
+.progress {
+    padding-top: 20px;
+    padding-left: 70px;
+    h4 {
+        padding-bottom: 5px;
+    }
+}
+
+.fill {
+    background-color: rgb(204, 252, 181);
+    width: 100px;
+    height: 4px;
+}
+
+.innerfill {
+    width: 70%;
+    background-color: rgb(5, 147, 5);
+    height: 4px;
+}
+
+.status {
+    background-color: rgb(191, 252, 191);
+    height: 30px;
+    margin-top: 20px;
+    border-radius: 6px;
+    padding: 5px 10px;
+}
+
+.Action {
+    margin-top: 20px;
+    background-color: rgb(21, 198, 198);
+    height: 30px;
+    padding: 5px 10px;
+    color: white;
+    border-radius: 4px;
+}
+
+.course2 {
+    display: flex;
+    justify-content: space-between;
+}
+.instructor1{
+    position: relative;
+    right: 30px;
+}
+.progress1{
+    position: relative;
+    right:30px;
+}
+.innerfill1{
+    width: 90%;
+}
+.status1{
+    position:relative;
+    right: 14px;
+}
+.course3{
+    display: flex;
+    justify-content: space-between;
+}
+.instructor2{
+    position: relative;
+    right: 15px;
+}
+.progress2{
+    position: relative;
+    right:20px;
+}
+.innerfill2{
+    width: 50%;
+}
+.status2{
+    position:relative;
+    right: 10px;
+}
+
+
+
+
