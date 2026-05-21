@@ -17,7 +17,6 @@ body {
 /* Sidebar */
 .sidebar {
   width: 300px;
-  /* background: #4a5f4b; */
   background: linear-gradient(130deg, rgb(0, 0, 0) 0%, #004d4d 50%, aqua 100%);
   padding: 25px 20px;
   color: #fff;
