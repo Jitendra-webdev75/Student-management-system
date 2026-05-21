@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <title>Eduportal</title>
+</head>
+<body>
+    <header class="center">
+       
+        <div class="head">
+         <span class="center">
+            <img src="Student-management-system\images\firelogo1.png" alt="edulogo" height="30px" class="icon">
+            <p>&nbsp;<strong>EduPortal</strong></p>
+        </span>
+        <span class="headmid">
+           <span>Help</span>
+           <span>support</span>
+           <span>Institutional site</span>
+        </span>
+        <span id="adminbtn">
+            <a href="#">Admin Portal</a>
+        </span>
+    </div>
+       
+    </header>
+    <!-- main form -->
+       <main class="center" >
+
+        <div class="formbox center">
+             <!-- leftbox -->
+            <div class="leftbox ">
+                 <div class="leftbg center">
+                    <span ><img src="images\firelogo2.png" alt="edulogo" width="50px" height="45px" class="icon"></span>
+                    <span class="welcometxt">Welcome!</span>
+                    <span class="pargraph" >
+                          <p>
+                            Empowering your academic journey through <br>
+                          seamless digital access. Your portal to collaborative <br>
+                          learning, institutional resources, and personal <br>
+                          growth
+                          </p>
+                    </span>
+                 </div>
+            </div>
+
+            <!-- rightbox -->
+             <div class="rightbox center">
+              <!-- <div class="rightbg"> -->
+                 <!--  -->
+                <div id="adminForm" class="">
+                 <span id="admintext">Admin login</span><br>
+                 <span class="logintext">Login in to your account to continue</span><br><br>
+                <form class="center  forminput" onsubmit="return login()">
+                    <input type="text" class="inputbox" id="name" placeholder="Email....." name="email" ><br>
+                    <input type="password" class="inputbox" id="pass" placeholder="password" name="password"><br>                   
+                    <span class="logintext">Forgot your password?</span><br>
+                   <input type="submit" placeholder="login" value="LOG IN" class="loginbtn" ><br>
+                </form>
+                 </div>
+              <!--  -->
+        
+               <!--  -->
+             </div>
+
+        </div>
+
+       </main>
+       <!--  -->
+         <footer >
+                <span><b>EduPorta</b></span>
+                <span>&copy; 2026 EduPortal Institution.</span>
+                <span id="mid"  class="footbox">Privacy policy</span>
+                <span class="footbox">Term of services</span>
+                <span class="footbox">Accessiblity</span>
+         </footer> 
+</body>
+</html>
+
+
+
+ <script>
+
+        function login() {
+
+            if (username.value === "bahubali" && password.value === "122333") {
+
+                window.alert("Login Successfully");
+
+            } else {
+                window.alert("Incorrect username & password.");
+            }
+
+            return false; 
+        }
+        
+    </script>
+    
+
+    <style>
+        *{
+    margin: 0%;
+    padding: 0%;
+}
+body{
+    width: 100%;
+    height: 100vh;
+    background-color: #F8F9FF;   
+    
+    position: relative;
+}
+a{
+    text-decoration: none;
+}
+.center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+header{
+    width: 100%;
+    height: 60px;
+    background-color: white;
+}
+header span{
+    cursor: pointer;
+}
+.head{
+    width: 100%;
+    padding: 0px 3% 0 3%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.headmid{
+    width: 35vh; 
+    color: #475569;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;   
+}
+.icon{
+    border-radius: 50%;
+}
+#adminbtn a{
+    padding: 10px;
+    color: aqua;
+    background-color: black;
+    border: .4px solid rgb(0, 255, 255,0.4);
+    border-radius: 8px;
+}
+/* box */
+main{
+    width: 100%;
+    height: 80%;
+}
+.formbox{
+    width: 60%;
+    height: 80%;
+    box-shadow: 0 0 5px 2px rgb(144, 140, 140);
+    background-color: white;
+    border-radius: 40px;
+}
+.leftbox{
+    width: 50%;
+    height: 100%; 
+   
+}
+.leftbg{
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    border-radius: 40px 50% 50% 40px;
+    filter: drop-shadow(3px 0 3px rgb(0, 255, 255));  /*little shadow effect on rightside */
+ background:linear-gradient(130deg,rgb(0, 0, 0) 0%,#004D4D 50%,aqua 100%) ;
+}
+.welcometxt{
+    margin: 5px 0 20px 0;
+    color: aqua;
+    font-weight: bold;
+    font-size: 4vh;    
+}
+.pargraph{
+    font-size: 2vh;
+    color: white;
+    text-align: center;
+}
+.rightbg{
+    height: 100%;
+    width: 100%;
+}
+.rightbox{
+     width: 50%;
+    height: 100%;
+    overflow: hidden;
+    flex-direction: column;
+    line-height: 30px;
+   
+}
+/*  */
+#adminForm{
+    height: 70%;
+     width: 100%;
+    text-align: center;
+}
+
+#admintext{
+    font-weight: bold;
+    font-size: 1.8rem;
+}
+.logintext{
+    text-align: center;
+    font-size: 0.8rem;
+    color: #444651;
+}
+.forminput{
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.inputbox{
+    margin-bottom: 10px;
+    /* height: 30px; */
+    width: 70%;
+    padding: 10px 5px 10px 10px;
+    background-color: #F8FAFC;
+    color: #94A3B8;
+    border-radius: 30px;
+    border: .5px solid #E2E8F0;
+}
+.loginbtn{
+     height: 2rem;
+     width: 10rem;
+     /* margin-bottom: 100px; */
+     border: 0.5px solid aqua;
+     box-shadow:  0px 4px 6px 0px #0008;
+     border-radius: 40px;
+     background: linear-gradient(90deg ,#00FFFF 0%,#00D1D1 100% ) ;
+     transition: all 0.3s ease-in-out;
+}
+.loginbtn:hover {
+  box-shadow: 0px 6px 12px 0px #00D1D1,
+  0px 6px 12px 0px #0009  ;
+  /* filter: blur(1px); */
+  
+}
+
+.loginbtn:active {
+    transform: scale(0.95);
+  box-shadow: 0px 0px 0px -5px #0000;
+}
+.stureg{
+    width: 15rem;
+}
+
+/*  */
+footer{
+    width: 100%;
+    height: 50px;
+    background-color: white;
+    position: absolute;
+    bottom: 1px;
+    color: #475569;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+#mid{
+    padding-left: 40rem;
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+
+  body {
+    height: auto;
+    min-height: 100vh;
+  }
+
+  /* Header */
+  .head {
+    padding: 0 4%;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .headmid {
+    width: auto;
+    gap: 12px;
+    font-size: 0.8rem;
+  }
+  #adminbtn a {
+    font-size: 0.75rem;
+    padding: 7px 9px;
+  }
+
+  /* Main / formbox */
+  main {
+    height: auto;
+    padding: 20px 0 70px 0; /* leave room for footer */
+  }
+  .formbox {
+    width: 92%;
+    height: auto;
+    flex-direction: column;  /* stack left + right vertically */
+    border-radius: 20px;
+    overflow: hidden;
+  }
+
+  /* Left panel */
+  .leftbox {
+    width: 100%;
+    height: auto;
+  }
+  .leftbg {
+    width: 95%;
+    height: auto;
+    padding: 24px 16px;
+    border-radius: 20px 20px 0 0;   /* round only top corners */
+    filter: drop-shadow(0 3px 3px rgb(0, 255, 255));
+  }
+  .welcometxt {
+    font-size: 3vh;
+    margin: 8px 0 12px 0;
+  }
+  .pargraph {
+    /* display: none; */
+    text-align: center;
+    font-size: 1.6vh;
+  }
+  .pargraph p br {
+    display: none;  /* let text wrap naturally */
+  }
+
+  /* Right panel */
+  .rightbox {
+    width: 100%;
+    height: auto;
+    padding: 24px 16px 20px 16px;
+  }
+  .radiobtn {
+    font-size: 2vh;
+  }
+
+  #adminForm{
+    height: auto;
+    width: 100%;
+  }
+  #admintext {
+    font-size: 1.4rem;
+  }
+  .inputbox {
+    width: 85%;
+  }
+  .loginbtn {
+    width: 85%;
+    height: 2.4rem;
+  }
+  .stureg {
+    width: 85%;
+  }
+  .newstu {
+    margin-top: 12px;
+  }
+
+  /* Footer */
+  footer {
+    position: relative;
+    height: auto;
+    flex-wrap: wrap;
+    gap: 6px;
+    padding: 12px 16px;
+    justify-content: space-evenly;
+    text-align: center;
+  }
+  #mid {
+    padding-left: 0; /* remove the big left push */
+  }
+  .footbox{
+    display: none;
+  }
+}
+
+
+    </style>
