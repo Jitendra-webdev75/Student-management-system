@@ -53,6 +53,7 @@
                 <label>Teacher ID</label>
                 <input
                   id="teachId"
+                  name="id"
                   type="text"
                   placeholder="Enter ID"
                   required
@@ -63,6 +64,7 @@
                 <label>Full Name</label>
                 <input
                   id="teachName"
+                  name="name"
                   type="text"
                   placeholder="Enter Name"
                   required
@@ -73,6 +75,7 @@
                 <label>Email ID</label>
                 <input
                   id="teachEmail"
+                  name="email"
                   type="email"
                   placeholder="example@college.com"
                   required
@@ -81,7 +84,7 @@
 
               <div class="input-group">
                 <label>Department</label>
-                <select required id="teachDepart">
+                <select required id="teachDepart" name="department">
                   <option value="">Select Department</option>
                   <option value="BCA">BCA</option>
                   <option value="B.Tech">B.Tech</option>
@@ -93,6 +96,7 @@
                 <label>Subject</label>
                 <input
                   id="teachSubj"
+                  name="subj"
                   type="text"
                   placeholder="e.g. Java, DBMS"
                   required
@@ -101,7 +105,7 @@
 
               <div class="input-group">
                 <label>Status</label>
-                <select required id="teachStatus">
+                <select required id="teachStatus" name="status">
                   <option value="Active">Active</option>
                   <option value="Inactive">Inactive</option>
                 </select>
@@ -175,13 +179,15 @@
       </div>
     </div>
   </body>
-  <script>
+  <!-- <script>
     let teachForm = document.querySelector(".popup-overlay");
     let addBtn = document.querySelector("#addBtn");
     let clearBtn = document.querySelector("#clearBtn");
     let closeBtn = document.querySelector(".close-btn");
     let submitBtn = document.querySelector(".submit-btn");
     let todo = document.getElementById("todo");
+
+    let list = JSON.parse(localStorage.getItem("teacherData")) || [];
 
     addBtn.addEventListener("click", () => {
       teachForm.style.display = "flex";
@@ -255,6 +261,86 @@
 
         teachForm.style.display = "flex";
         row.remove();
+      }
+    });
+  </script> -->
+
+  <script>
+    let teachForm = document.querySelector(".popup-overlay"),
+      form = document.getElementById("teacherForm"),
+      todo = document.getElementById("todo");
+
+    // Local Storage se data lana (Agar nahi hai toh empty array)
+    let list = JSON.parse(localStorage.getItem("teachersData")) || [];
+
+    // 1. Short Render Function
+    const render = () => {
+      todo.innerHTML = list
+        .map(
+          (t, i) => `
+      <li class="todoLists" data-index="${i}">
+        ${["id", "name", "email", "department", "subj", "status"].map((k) => `<div class="head2">${t[k]}</div>`).join("")}
+        <div class="actions">
+          <div class="edit-btn actBtns"><i class="ri-pencil-fill"></i></div>
+          <div class="delete-btn actBtns"><i class="ri-delete-bin-5-fill"></i></div>
+        </div>
+      </li>`,
+        )
+        .join("");
+    };
+    render();
+
+    // Save State Helper
+    const save = () => {
+      localStorage.setItem("teachersData", JSON.stringify(list));
+      render();
+    };
+
+    // Popups & Reset
+    document
+      .getElementById("addBtn")
+      .addEventListener("click", () => (teachForm.style.display = "flex"));
+    document
+      .querySelector(".close-btn")
+      .addEventListener("click", () => (teachForm.style.display = "none"));
+    document.getElementById("clearBtn").addEventListener("click", () => {
+      if (confirm("Clear all?")) {
+        list = [];
+        save();
+      }
+    });
+
+    // 2. Add / Update (FormData Method - Super Short)
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const data = Object.fromEntries(new FormData(form));
+      // Note: Iske liye aapke HTML inputs me name="" attribute hona chahiye (Neeche note check karein)
+
+      list.push(data);
+      save();
+      teachForm.style.display = "none";
+      form.reset();
+    });
+
+    // 3. Actions (Delete & Edit Combined using Event Delegation)
+    todo.addEventListener("click", (e) => {
+      const row = e.target.closest(".todoLists");
+      if (!row) return;
+      const index = row.getAttribute("data-index");
+
+      if (e.target.closest(".delete-btn") && confirm("Delete this?")) {
+        list.splice(index, 1);
+        save();
+      } else if (e.target.closest(".edit-btn")) {
+        const teacher = list[index];
+        // Form ke saare inputs me automatic data fill karne ke liye
+        Object.keys(teacher).forEach((key) => {
+          if (form[key]) form[key].value = teacher[key];
+        });
+
+        teachForm.style.display = "flex";
+        list.splice(index, 1);
+        save();
       }
     });
   </script>

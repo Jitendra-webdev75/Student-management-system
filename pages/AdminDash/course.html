@@ -85,6 +85,7 @@
                 <label>Course Code</label>
                 <input
                   id="Course_Id"
+                  name="id"
                   type="number"
                   placeholder="Enter code"
                   required
@@ -95,6 +96,7 @@
                 <label>Course Name</label>
                 <input
                   id="CourseName"
+                  name="name"
                   type="text"
                   placeholder="Enter Name"
                   required
@@ -106,6 +108,7 @@
 
                 <input
                   id="InstrName"
+                  name="instructor"
                   type="text"
                   placeholder="Enter Name"
                   required
@@ -114,12 +117,12 @@
 
               <div class="input-group">
                 <label>Students</label>
-                <input id="StudCount" type="number" required />
+                <input id="StudCount" name="students" type="number" required />
               </div>
 
               <div class="input-group">
                 <label>Status</label>
-                <select required id="courseStatus">
+                <select required id="courseStatus" name="status">
                   <option value="Active">Active</option>
                   <option value="Inactive">Inactive</option>
                 </select>
@@ -208,7 +211,7 @@
       </div>
     </div>
   </body>
-  <script>
+  <!-- <script>
     let courseForm = document.querySelector(".popup-overlay");
     let addBtn = document.querySelector("#addBtn");
     let clearBtn = document.querySelector("#clearBtn");
@@ -282,6 +285,76 @@
         document.getElementById("courseStatus").value = val[4].textContent;
         courseForm.style.display = "flex";
         row.remove();
+      }
+    });
+  </script> -->
+
+  <script>
+    let courseForm = document.querySelector(".popup-overlay"),
+      form = document.getElementById("courseForm"),
+      todo = document.getElementById("Cour_todo");
+
+    // Local Storage se data load
+    let list = JSON.parse(localStorage.getItem("courseData")) || [];
+
+    const render = () => {
+      todo.innerHTML = list
+        .map(
+          (t, i) => `
+      <li class="todoLists" data-index="${i}">
+        ${["id", "name", "instructor", "students", "status"].map((k) => `<div class="head2">${t[k]}</div>`).join("")}
+        <div class="actions">
+          <div class="edit-btn actBtns"><i class="ri-pencil-fill"></i></div>
+          <div class="delete-btn actBtns"><i class="ri-delete-bin-5-fill"></i></div>
+        </div>
+      </li>`,
+        )
+        .join("");
+    };
+    render();
+
+    const save = () => {
+      localStorage.setItem("courseData", JSON.stringify(list));
+      render();
+    };
+
+    document
+      .getElementById("addBtn")
+      .addEventListener("click", () => (courseForm.style.display = "flex"));
+    document
+      .querySelector(".close-btn")
+      .addEventListener("click", () => (courseForm.style.display = "none"));
+    document.getElementById("clearBtn").addEventListener("click", () => {
+      if (confirm("Clear all?")) {
+        list = [];
+        save();
+      }
+    });
+
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      list.push(Object.fromEntries(new FormData(form)));
+      save();
+      courseForm.style.display = "none";
+      form.reset();
+    });
+
+    todo.addEventListener("click", (e) => {
+      const row = e.target.closest(".todoLists");
+      if (!row) return;
+      const index = row.getAttribute("data-index");
+
+      if (e.target.closest(".delete-btn") && confirm("Delete this?")) {
+        list.splice(index, 1);
+        save();
+      } else if (e.target.closest(".edit-btn")) {
+        const item = list[index];
+        Object.keys(item).forEach((key) => {
+          if (form[key]) form[key].value = item[key];
+        });
+        courseForm.style.display = "flex";
+        list.splice(index, 1);
+        save();
       }
     });
   </script>
