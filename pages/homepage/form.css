@@ -113,6 +113,26 @@ body {
   transition: 0.3s;
 }
 
+.back-btn {
+  outline: none;
+  border-radius: 30px;
+  border: none;
+  padding: 14px 35px;
+  font-size: 15px;
+  scale: 1;
+  text-decoration: none;
+  background-color: aliceblue;
+}
+
+.back-btn:hover {
+  background: linear-gradient(109.94deg, #00ffd5 0%, #00ced1 100%);
+  color: white;
+}
+
+.back-btn:active {
+  scale: 0.9;
+}
+
 /* Submit Button */
 
 .submit-btn {
