@@ -59,7 +59,11 @@
             <span id="admintext">Admin login</span><br />
             <span class="logintext">Login in to your account to continue</span
             ><br /><br />
-            <form class="center forminput" onsubmit="return login();">
+            <form
+              class="center forminput"
+              action="Admin_submit.php"
+              method="post"
+            >
               <input
                 type="text"
                 class="inputbox"
@@ -78,7 +82,7 @@
               <input
                 type="submit"
                 placeholder="login"
-                value="LOG IN"
+                value="LOGIN"
                 class="loginbtn"
               /><br />
             </form>
@@ -99,18 +103,6 @@
     </footer>
   </body>
 </html>
-
-<script>
-  function login() {
-    if (username.value === "bahubali" && password.value === "122333") {
-      window.alert("Login Successfully");
-    } else {
-      window.alert("Incorrect username & password.");
-    }
-
-    return false;
-  }
-</script>
 
 <style>
   * {
