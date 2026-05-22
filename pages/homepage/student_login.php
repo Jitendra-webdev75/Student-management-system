@@ -4,6 +4,14 @@
     <title>Eduportal</title>
   </head>
   <body>
+    <?php
+session_start();
+if (isset($_SESSION['student_id'])) {
+    header("Location: sms2.php"); 
+    exit();
+}
+
+?>
     <header class="center">
       <div class="head">
         <span class="center">
@@ -58,7 +66,7 @@
             <span id="admintext">Students login</span><br />
             <span class="logintext">Login in to your account to continue</span
             ><br />
-            <form class="center forminput" >
+            <form class="center forminput" action="loginProcess.php" method="post">
               <input
                 type="text"
                 class="inputbox"
