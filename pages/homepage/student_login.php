@@ -8,7 +8,7 @@
       <div class="head">
         <span class="center">
           <img
-            src="/Project/images/firelogo1.png"
+            src="../../images/firelogo1.png"
             alt="edulogo"
             height="30px"
             class="icon"
@@ -33,7 +33,7 @@
           <div class="leftbg center">
             <span
               ><img
-                src="/Project/images/firelogo2.png"
+                src="../../images/firelogo2.png"
                 alt="edulogo"
                 width="50px"
                 height="45px"
@@ -58,7 +58,7 @@
             <span id="admintext">Students login</span><br />
             <span class="logintext">Login in to your account to continue</span
             ><br />
-            <form class="center forminput">
+            <form class="center forminput" >
               <input
                 type="text"
                 class="inputbox"
@@ -74,6 +74,7 @@
               <span class="logintext">Forgot your password?</span><br />
               <input
                 type="submit"
+                name="login_submit"
                 placeholder="login"
                 value="LOG IN"
                 class="loginbtn"
@@ -83,7 +84,8 @@
               <span class="logintext"
                 >New student registration?<strong>portal</strong></span
               ><br />
-              <a href="/Project/pages/homepage/form.html"
+              <a class="loginbtn stureg" 
+              href="/SMS/Project/pages/homepage/form.html"
                 ><button class="loginbtn stureg">Student regester</button></a
               >
             </div>

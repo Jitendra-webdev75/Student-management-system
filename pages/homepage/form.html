@@ -18,47 +18,63 @@
         <h1 id="mainHead">STUDENT REGISTRATION FORM</h1>
         <p>Please fill in all details for enrollment</p>
 
-        <form>
+        <form method="post" action="Data.php">
           <div class="form-row">
             <div class="input-box">
               <label>First Name</label>
-              <input type="text" placeholder="Student First Name" />
+              <input
+                type="text"
+                placeholder="Student First Name"
+                name="first_name"
+              />
             </div>
 
             <div class="input-box">
               <label>Last Name</label>
-              <input type="text" placeholder="Last Name" />
+              <input type="text" placeholder="Last Name" name="last_name" />
             </div>
           </div>
 
           <div class="form-row">
             <div class="input-box">
               <label>Father's Name</label>
-              <input type="text" placeholder="Father Name" />
+              <input type="text" placeholder="Father Name" name="father_name" />
             </div>
 
             <div class="input-box">
               <label>Date of Birth</label>
-              <input type="date" />
+              <input type="date" name="dob" />
             </div>
           </div>
 
           <div class="form-row">
             <div class="input-box">
               <label>Contact No.</label>
-              <input type="number" placeholder="Enter your Contact No." />
+              <input
+                type="number"
+                placeholder="Enter your Contact No."
+                name="contact"
+              />
             </div>
 
             <div class="input-box">
               <label>Email Address</label>
-              <input type="email" placeholder="Enter your Email Address" />
+              <input
+                type="email"
+                placeholder="Enter your Email Address"
+                name="email"
+              />
             </div>
           </div>
 
           <div class="form-row">
             <div class="input-box">
               <label>Password</label>
-              <input type="password" placeholder="Enter your password" />
+              <input
+                type="password"
+                placeholder="Enter your password"
+                name="password"
+              />
             </div>
 
             <div class="input-box">
@@ -71,7 +87,7 @@
             <div class="input-box">
               <label>Qualification</label>
 
-              <select>
+              <select name="qualification">
                 <option>Qualification</option>
                 <option>10th</option>
                 <option>12th</option>
@@ -83,7 +99,7 @@
             <div class="input-box">
               <label>Courses to Enroll</label>
 
-              <select>
+              <select name="course">
                 <option>Select your course</option>
                 <option>Computer Science</option>
                 <option>Business Admin</option>
@@ -96,7 +112,9 @@
           </div>
 
           <div class="button-group">
-            <button type="submit" class="submit-btn">Submit</button>
+            <button type="submit" class="submit-btn" name="submit">
+              Submit
+            </button>
             <button type="reset" class="reset-btn">Reset</button>
             <a
               class="back-btn"
@@ -110,8 +128,7 @@
 
       <div class="right-side">
         <div class="overlay">
-          <!-- Replace with your image -->
-          <img src="/Project/images/3Dside.jpeg" alt="Student Image" />
+          <img src="../../images/3Dside.jpeg" alt="Student Image" />
         </div>
       </div>
     </div>
