@@ -46,31 +46,33 @@
         <h1 class="adminHead">Courses</h1>
         <div class="itemsBox">
           <ul class="list_items">
-            <a href="Admin_Dashboard.html"
+            <a href="Admin_Dashboard.php"
               ><li class="items">
                 <i class="ri-home-4-fill"></i> Dashboard
               </li></a
             >
 
-            <a href="Stud_sect.html">
+            <a href="Stud_sect.php">
               <li class="items">
                 <i class="ri-graduation-cap-fill"></i> Students
               </li>
             </a>
-            <a href="teachers.html"
+            <a href="teachers.php"
               ><li class="items">
                 <i class="ri-presentation-fill"></i> Teachers
               </li></a
             >
-            <a href="course.html">
+            <a href="course.php">
               <li class="items active">
                 <i class="ri-book-3-fill"></i> Courses
               </li>
             </a>
 
-            <li id="logoOut" class="items">
-              <i class="ri-logout-box-r-line"></i> Logout
-            </li>
+            <a href="Adm_Logout.php">
+              <li id="logoOut" class="items">
+                <i class="ri-logout-box-r-line"></i> Logout
+              </li>
+            </a> 
           </ul>
         </div>
       </div>
@@ -168,7 +170,16 @@
               <div class="coursOverview">
                 <div id="donutchart" style="width: 47vw; height: 37vh"></div>
               </div>
-              <div class="illustr"></div>
+              <div class="illust">
+                <img
+                  id="courImg"
+                  src="../../images/asset.png"
+                  alt=""
+                  height="300px"
+                  ;
+                  width="500px"
+                />
+              </div>
             </div>
             <div class="bottomSect">
               <div class="courseHandler">

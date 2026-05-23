@@ -24,28 +24,28 @@
         </div>
 
         <ul class="menu">
-          <li class="active">
-            <a href="sms2.html"><i class="fa-solid fa-house"></i> Dashboard</a>
+          <li>
+            <a href="sms2.php"><i class="fa-solid fa-house"></i> Dashboard</a>
           </li>
 
           <li>
-            <a href="profile.html"
+            <a href="profile.php"
               ><i class="fa-regular fa-user"></i> Profile</a
             >
           </li>
 
           <li>
-            <a href="Course.html"><i class="fa-solid fa-book"></i> Courses</a>
+            <a href="Course.php"><i class="fa-solid fa-book"></i> Courses</a>
           </li>
 
           <li>
-            <a href="stu_result.html"
+            <a href="stu_result.php"
               ><i class="fa-solid fa-square-poll-vertical"></i> Results</a
             >
           </li>
 
           <li class="logout">
-            <a href="#"
+            <a href="../homepage/logout.php"
               ><i class="fa-solid fa-right-from-bracket"></i> Logout</a
             >
           </li>

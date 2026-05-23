@@ -17,28 +17,30 @@
         <h1 class="adminHead">Teachers</h1>
         <div class="itemsBox">
           <ul class="list_items">
-            <a href="Admin_Dashboard.html"
+            <a href="Admin_Dashboard.php"
               ><li class="items">
                 <i class="ri-home-4-fill"></i> Dashboard
               </li></a
             >
-            <a href="Stud_sect.html">
+            <a href="Stud_sect.php">
               <li class="items">
                 <i class="ri-graduation-cap-fill"></i> Students
               </li>
             </a>
-            <a href="teachers.html"
+            <a href="teachers.php"
               ><li class="items active">
                 <i class="ri-presentation-fill"></i> Teachers
               </li></a
             >
 
-            <a href="course.html">
+            <a href="course.php">
               <li class="items"><i class="ri-book-3-fill"></i> Courses</li>
             </a>
-            <li id="logoOut" class="items">
-              <i class="ri-logout-box-r-line"></i> Logout
-            </li>
+            <a href="Adm_Logout.php">
+              <li id="logoOut" class="items">
+                <i class="ri-logout-box-r-line"></i> Logout
+              </li>
+            </a> 
           </ul>
         </div>
       </div>
@@ -179,102 +181,17 @@
       </div>
     </div>
   </body>
-  <!-- <script>
-    let teachForm = document.querySelector(".popup-overlay");
-    let addBtn = document.querySelector("#addBtn");
-    let clearBtn = document.querySelector("#clearBtn");
-    let closeBtn = document.querySelector(".close-btn");
-    let submitBtn = document.querySelector(".submit-btn");
-    let todo = document.getElementById("todo");
-
-    let list = JSON.parse(localStorage.getItem("teacherData")) || [];
-
-    addBtn.addEventListener("click", () => {
-      teachForm.style.display = "flex";
-    });
-    clearBtn.addEventListener("click", () => {
-      todo.innerHTML = "";
-    });
-
-    closeBtn.addEventListener("click", () => {
-      teachForm.style.display = "none";
-    });
-
-    submitBtn.addEventListener("click", (e) => {
-      e.preventDefault();
-      const id = document.getElementById("teachId").value;
-      const name = document.getElementById("teachName").value;
-      const email = document.getElementById("teachEmail").value;
-      const Department = document.getElementById("teachDepart").value;
-      const subj = document.getElementById("teachSubj").value;
-      const status = document.getElementById("teachStatus").value;
-
-      if (id || name || email || Department || subj != "") {
-        const todoLi = document.createElement("li");
-
-        todoLi.classList.add("todoLists");
-        todoLi.innerHTML = `
-      <div class = "head2">${id}</div>
-      <div class = "head2">${name}</div>
-      <div class = "head2">${email}</div>
-      <div class = "head2">${Department}</div>
-      <div class = "head2">${subj}</div>
-      <div class = "head2">${status}</div>
-      <div class="actions">
-      <div class="edit-btn actBtns"><i class="ri-pencil-fill"></i></div>
-      <div class="delete-btn actBtns"> <i class="ri-delete-bin-5-fill"></i></div>
-      </div>
-      `;
-
-        todo.appendChild(todoLi);
-
-        // for clear input
-        document.getElementById("teachId").value = "";
-        document.getElementById("teachName").value = "";
-        document.getElementById("teachEmail").value = "";
-        document.getElementById("teachDepart").value = "";
-        document.getElementById("teachSubj").value = "";
-        document.getElementById("teachStatus").value = "";
-      } else {
-        alert("Please fill input fields properly!");
-      }
-    });
-
-    todo.addEventListener("click", (e) => {
-      if (e.target.closest(".delete-btn")) {
-        if (confirm("Are you sure to delte this list")) {
-          e.target.closest(".todoLists").remove();
-        }
-      }
-    });
-    todo.addEventListener("click", (e) => {
-      if (e.target.closest(".edit-btn")) {
-        const row = e.target.closest(".todoLists");
-        const val = row.querySelectorAll(".head2");
-
-        document.getElementById("teachId").value = val[0].textContent;
-        document.getElementById("teachName").value = val[1].textContent;
-        document.getElementById("teachEmail").value = val[2].textContent;
-        document.getElementById("teachDepart").value = val[3].textContent;
-        document.getElementById("teachSubj").value = val[4].textContent;
-        document.getElementById("teachStatus").value = val[5].textContent;
-
-        teachForm.style.display = "flex";
-        row.remove();
-      }
-    });
-  </script> -->
+  
 
   <script>
     let teachForm = document.querySelector(".popup-overlay"),
       form = document.getElementById("teacherForm"),
       todo = document.getElementById("todo");
 
-    // Local Storage se data lana (Agar nahi hai toh empty array)
+   
     let list = JSON.parse(localStorage.getItem("teachersData")) || [];
 
-    // 1. Short Render Function
-    const render = () => {
+       const render = () => {
       todo.innerHTML = list
         .map(
           (t, i) => `
@@ -290,13 +207,13 @@
     };
     render();
 
-    // Save State Helper
+    
     const save = () => {
       localStorage.setItem("teachersData", JSON.stringify(list));
       render();
     };
 
-    // Popups & Reset
+    
     document
       .getElementById("addBtn")
       .addEventListener("click", () => (teachForm.style.display = "flex"));
@@ -310,11 +227,11 @@
       }
     });
 
-    // 2. Add / Update (FormData Method - Super Short)
+    
     form.addEventListener("submit", (e) => {
       e.preventDefault();
       const data = Object.fromEntries(new FormData(form));
-      // Note: Iske liye aapke HTML inputs me name="" attribute hona chahiye (Neeche note check karein)
+     
 
       list.push(data);
       save();
@@ -322,8 +239,7 @@
       form.reset();
     });
 
-    // 3. Actions (Delete & Edit Combined using Event Delegation)
-    todo.addEventListener("click", (e) => {
+        todo.addEventListener("click", (e) => {
       const row = e.target.closest(".todoLists");
       if (!row) return;
       const index = row.getAttribute("data-index");
@@ -333,7 +249,7 @@
         save();
       } else if (e.target.closest(".edit-btn")) {
         const teacher = list[index];
-        // Form ke saare inputs me automatic data fill karne ke liye
+    
         Object.keys(teacher).forEach((key) => {
           if (form[key]) form[key].value = teacher[key];
         });

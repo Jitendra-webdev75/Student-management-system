@@ -1,3 +1,12 @@
+   <?php
+session_start();
+if (isset($_SESSION['student_id'])) {
+    header("Location: ../AdminDash/Admin_Dashboard.php"); 
+    exit();
+}
+
+?>
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -8,7 +17,7 @@
       <div class="head">
         <span class="center">
           <img
-            src="/Project/images/firelogo1.png"
+            src="../../images/firelogo1.png"
             alt="edulogo"
             height="30px"
             class="icon"
@@ -33,7 +42,7 @@
           <div class="leftbg center">
             <span
               ><img
-                src="/Project/images/firelogo2.png"
+                src="../../images/firelogo2.png"
                 alt="edulogo"
                 width="50px"
                 height="45px"

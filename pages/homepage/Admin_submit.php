@@ -18,7 +18,7 @@ if($email == $admin_email && $password == $admin_password){
     <script>
         alert('Login Successfully');
 
-        window.location.href='/SMS/Project/pages/AdminDash/Admin_Dashboard.html';
+        window.location.href='/SMS/Project/pages/AdminDash/Admin_Dashboard.php';
         
 
     </script>
@@ -30,7 +30,7 @@ if($email == $admin_email && $password == $admin_password){
     <script>
         alert('Incorrect Email or Password');
 
-        window.location.href='Admin_login.html';
+        window.location.href='Admin_login.php';
     </script>
     ";
 }

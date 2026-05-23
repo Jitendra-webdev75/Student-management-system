@@ -7,7 +7,7 @@
     <?php
 session_start();
 if (isset($_SESSION['student_id'])) {
-    header("Location: sms2.php"); 
+    header("Location: ../student/sms2.php"); 
     exit();
 }
 
@@ -247,6 +247,8 @@ if (isset($_SESSION['student_id'])) {
     padding: 10px 5px 10px 10px;
     background-color: #f8fafc;
     color: #94a3b8;
+    font-size: 1.2rem;
+    color: #444651;
     border-radius: 30px;
     border: 0.5px solid #e2e8f0;
   }

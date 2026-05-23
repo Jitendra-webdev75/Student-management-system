@@ -1,3 +1,12 @@
+<?php
+    session_start();
+
+  if(!isset($_SESSION['student_id'])){
+    header("Location: student_login.php");
+    exit();
+}
+?>
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -11,14 +20,7 @@
     />
   </head>
 
-      <?php
-    session_start();
-
-  if(!isset($_SESSION['student_id'])){
-    header("Location: student_login.php");
-    exit();
-}
-?>
+    
   <body>
     <div class="container">
       <!-- Sidebar -->
@@ -26,19 +28,19 @@
         <h1><i class="fa-solid fa-graduation-cap"></i> Student Panel</h1>
 
         <div class="menu">
-          <a href="sms2.html" class="courselink"
+          <a href="sms2.php" class="courselink"
             ><i class="fa-solid fa-house"></i> Dashboard</a
           >
-          <a href="profile.html" class="courselink"
+          <a href="profile.php" class="courselink"
             ><i class="fa-regular fa-user"></i> Profile</a
           >
-          <a href="Course.html" class="courselink"
+          <a href="Course.php" class="courselink"
             ><i class="fa-solid fa-book"></i> Courses</a
           >
-          <a href="stu_result.html" class="courselink"
+          <a href="stu_result.php" class="courselink"
             ><i class="fa-solid fa-trophy"></i> Results</a
           >
-          <a href="" class="courselink"
+          <a href="../homepage/logout.php" class="courselink"
             ><i class="fa-solid fa-angle-left"></i> Logout</a
           >
         </div>
