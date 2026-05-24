@@ -34,7 +34,7 @@
           <div class="editprofile ">
 
             <div class="editprofile-1 center">
-                <span><img src="/Project/images/boyavatat.avif" alt="" height="120px"></span>
+                <span><img src="../../images/boyavatat.avif" alt="" height="120px"></span>
                 <span class="studetail">
                     <div class="stuname"><h2>Rohit</h2></div>
                     <div class="stuid">Student ID: <b>ST123</b></div>
@@ -100,13 +100,7 @@
                     <td class="value">9876543210</td>
                   </tr>
           
-                  <!-- <tr>
-                    <td class="label"></td>
-                    <td class="colon"></td>
-                    <td class="value">
-                      
-                    </td>
-                  </tr> -->
+                 
                 </table>
           
               </div>

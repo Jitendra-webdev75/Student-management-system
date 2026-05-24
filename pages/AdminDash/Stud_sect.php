@@ -72,7 +72,7 @@
           <div class="stat-card">
             <div class="stat-icon blue"><i class="fas fa-users"></i></div>
             <div class="stat-info">
-              <h3>245</h3>
+              <h3 id="total_studcount">245</h3>
               <p>Total Students</p>
             </div>
           </div>
@@ -327,4 +327,20 @@
       </div>
     </div>
   </body>
+  <script>
+    const getStudentData = async ()=>{
+      try{
+          let response = await fetch("get_studData.php");
+          data = await response.json();
+          document.getElementById('total_studcount').innerText = data.totalStudent;
+          
+      }
+      catch(error){
+          console.error("error fetching data",error);
+      }
+    }
+
+    getStudentData()
+
+  </script>
 </html>

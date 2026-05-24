@@ -80,7 +80,7 @@
         <div class="course-about">
             <div class="course1">
                 <div class="course1-details">
-                    <img src="/Project/images/python.jpeg" alt="">
+                    <img src="../../images/python.jpeg" alt="">
                     <div class="course-text">
                         <h3>Python</h3>
                         <p>Learn Python from<br> basic to advance</p>
@@ -105,7 +105,7 @@
             </div>
              <div class="course2">
                 <div class="course1-details">
-                    <img src="/Project/images/html.jpeg" alt="" id="img2">
+                    <img src="../../images/html.jpeg" alt="" id="img2">
                      <div class="course-text">
                         <h3>Web Development</h3>
                         <p>HTML CSS,JavaScript for<br>beginner</p>
@@ -130,7 +130,7 @@
             </div>
             <div class="course3">
                   <div class="course1-details">
-                    <img src="/Project/images/python.jpeg" alt="">
+                    <img src="../../images/c.png" alt="">
                     <div class="course-text">
                         <h3>C Programming</h3>
                         <p>Learn C language step<br>by step</p>

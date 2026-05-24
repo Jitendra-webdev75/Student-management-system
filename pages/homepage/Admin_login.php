@@ -1,5 +1,14 @@
    <?php
 session_start();
+
+$secret_key = "admin001";
+
+if(!isset($_GET['key']) || $_GET['key'] !== $secret_key)
+  {
+    header('Location: student_login.php');
+    exit();
+  }
+
 if (isset($_SESSION['student_id'])) {
     header("Location: ../AdminDash/Admin_Dashboard.php"); 
     exit();

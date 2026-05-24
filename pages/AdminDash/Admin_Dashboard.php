@@ -120,7 +120,7 @@
           <div class="cardSect">
             <div id="cards" class="card1">
               <div class="data1">
-                <h1>1500</h1>
+                <h1 id="total_studcount">1500</h1>
                 <h2>Total Students</h2>
               </div>
               <div id="card_logo" class="logo1">
@@ -154,4 +154,21 @@
       </div>
     </div>
   </body>
+
+  <script>
+    const getStudentData = async ()=>{
+      try{
+          let response = await fetch("get_studData.php");
+          data = await response.json();
+          document.getElementById('total_studcount').innerText = data.totalStudent;
+          
+      }
+      catch(error){
+          console.error("error fetching data",error);
+      }
+    }
+
+    getStudentData()
+
+  </script>
 </html>

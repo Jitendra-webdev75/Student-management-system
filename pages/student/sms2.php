@@ -54,7 +54,7 @@
             <h2>Welcome, Student</h2>
             <p>Here is your academic overview.</p>
           </div>
-          <img src="/Project/images/welcome.jpeg" alt="" />
+          <img src="../../images/welcome.jpeg" alt="" />
         </div>
 
         <!-- Cards -->
@@ -85,7 +85,7 @@
             "Success is the sum of small<br />
             efforts repeated day in and day out."
           </p>
-          <img src="/Project/images/ui.png" alt="" />
+          <img src="../../images/ui.png" alt="" />
         </div>
       </div>
     </div>
