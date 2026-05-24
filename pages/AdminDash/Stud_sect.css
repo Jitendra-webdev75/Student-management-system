@@ -87,23 +87,20 @@ body {
 
 .stats-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 18px;
   margin-bottom: 28px;
 }
 
 .stat-card {
-  background: #ffffff;
-  border-radius: 12px;
-  padding: 20px 22px;
+  height: 16vh;
+  width: 22vw;
   display: flex;
+  background-color: red;
+  justify-content: space-around;
   align-items: center;
-  gap: 16px;
-  border-left: 3px solid aqua;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
-  transition:
-    transform 0.2s ease,
-    box-shadow 0.2s ease;
+  box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.3);
+  border-radius: 16px;
 }
 
 .stat-card:hover {

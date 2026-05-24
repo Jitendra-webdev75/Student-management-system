@@ -19,6 +19,43 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
+
+    <style>
+        .modal-overlay {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.5);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+        }
+        .modal-content {
+            background: #fff; 
+            padding: 15px 20px; 
+            border-radius: 10px;
+            width: 500px; 
+            max-height: 90vh; 
+            overflow-y: auto; 
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            position: relative;
+        }
+        .close-btn { position: absolute; top: 10px; right: 15px; cursor: pointer; font-size: 20px; }
+        h2 { margin-top: 0; font-size: 20px; color: #333; }
+        .form-group { margin-bottom: 10px; }
+        label { display: block; font-weight: bold; margin-bottom: 5px; color: #555; }
+        input, select {
+            width: 100%; padding: 8px; border: 1px solid #ccc;
+            border-radius: 5px; box-sizing: border-box;
+        }
+        .submit-btn {
+            width: 100%; padding: 12px; background-color: #00897b;
+            color: white; border: none; border-radius: 5px; cursor: pointer;
+            font-weight: bold; margin-top: 10px;
+        }
+        .submit-btn:hover { background-color: #00695c; }
+       
+    </style>
   </head>
   <body>
     <div class="main">
@@ -48,10 +85,63 @@
               <li id="logoOut" class="items">
                 <i class="ri-logout-box-r-line"></i> Logout
               </li>
+            </a>
           </ul>
         </div>
       </div>
       <div class="rightContent">
+        <div class="modal-overlay">
+          <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <form action="studDetail.php" method="post">
+              <div class="form-group">
+                <label>First Name</label>
+                <input type="text" placeholder="Enter First Name" name="first_name"  required />
+              </div>
+              <div class="form-group">
+                <label>Last Name</label>
+                <input type="text" placeholder="Enter Last Name" name="last_name" required />
+              </div>
+              <div class="form-group">
+                <label>Father's Name</label>
+                <input type="text" placeholder="Enter Father's Name" name="father_name" required />
+              </div>
+              <div class="form-group">
+                <label>Date of Birth</label>
+                <input type="date" name="dob" required />
+              </div>
+              <div class="form-group">
+                <label>Contact No.</label>
+                <input type="tel" placeholder="Enter Contact Number" name="contact" required />
+              </div>
+              <div class="form-group">
+                <label>Email Address</label>
+                <input type="email" placeholder="example@email.com" name="email" required />
+              </div>
+              <div class="form-group">
+                <label>Qualification</label>
+                <input type="text" placeholder="e.g. B.Sc, B.Tech" name="qualification" required />
+              </div>
+              <div class="form-group">
+                <label>Course</label>
+                <input
+                  type="text"
+                  placeholder="e.g. Web Development"
+                  name="course"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label>Status</label>
+                <select name="status">
+                  <option value="Active">Active</option>
+                  <option value="Inactive">Inactive</option>
+                </select>
+              </div>
+              <button class="submit-btn" type="submit" name="submit">Add Student</button>
+            </form>
+          </div>
+        </div>
         <div class="topbar">
           <div class="topbar-left">
             <h2>Students</h2>
@@ -79,7 +169,7 @@
           <div class="stat-card">
             <div class="stat-icon green"><i class="fas fa-user-check"></i></div>
             <div class="stat-info">
-              <h3>212</h3>
+              <h3 id="active_studcount">212</h3>
               <p>Active Students</p>
             </div>
           </div>
@@ -88,17 +178,17 @@
               <i class="fas fa-user-xmark"></i>
             </div>
             <div class="stat-info">
-              <h3>18</h3>
+              <h3 id="Inactive_studcount">18</h3>
               <p>Inactive Students</p>
             </div>
           </div>
-          <div class="stat-card">
+          <!-- <div class="stat-card">
             <div class="stat-icon purple"><i class="fas fa-user-plus"></i></div>
             <div class="stat-info">
               <h3>15</h3>
               <p>New This Month</p>
             </div>
-          </div>
+          </div> -->
         </div>
 
         <div class="table-section">
@@ -120,206 +210,35 @@
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td>1</td>
-                  <td>Rohan</td>
-                  <td>Sharma</td>
-                  <td>Rajesh Sharma</td>
-                  <td>12-04-2001</td>
-                  <td>9876543210</td>
-                  <td>rohan.sharma@email.com</td>
-                  <td>B.Sc</td>
-                  <td>Web Development</td>
-                  <td><span class="badge active">Active</span></td>
-                  <td class="actions">
-                    <button class="act-btn edit">
-                      <i class="fas fa-pen"></i>
-                    </button>
-                    <button class="act-btn delete">
-                      <i class="fas fa-trash"></i>
-                    </button>
-                  </td>
-                </tr>
-                <tr>
-                  <td>2</td>
-                  <td>Anjali</td>
-                  <td>Verma</td>
-                  <td>Suresh Verma</td>
-                  <td>23-08-2002</td>
-                  <td>9123456780</td>
-                  <td>anjali.verma@email.com</td>
-                  <td>B.Com</td>
-                  <td>Data Science</td>
-                  <td><span class="badge active">Active</span></td>
-                  <td class="actions">
-                    <button class="act-btn edit">
-                      <i class="fas fa-pen"></i>
-                    </button>
-                    <button class="act-btn delete">
-                      <i class="fas fa-trash"></i>
-                    </button>
-                  </td>
-                </tr>
-                <tr>
-                  <td>3</td>
-                  <td>Vikram</td>
-                  <td>Patel</td>
-                  <td>Mahesh Patel</td>
-                  <td>05-01-2001</td>
-                  <td>9988776655</td>
-                  <td>vikram.patel@email.com</td>
-                  <td>B.Tech</td>
-                  <td>Cyber Security</td>
-                  <td><span class="badge inactive">Inactive</span></td>
-                  <td class="actions">
-                    <button class="act-btn edit">
-                      <i class="fas fa-pen"></i>
-                    </button>
-                    <button class="act-btn delete">
-                      <i class="fas fa-trash"></i>
-                    </button>
-                  </td>
-                </tr>
-                <tr>
-                  <td>4</td>
-                  <td>Sneha</td>
-                  <td>Iyer</td>
-                  <td>Ramesh Iyer</td>
-                  <td>17-11-2002</td>
-                  <td>9871234567</td>
-                  <td>sneha.iyer@email.com</td>
-                  <td>M.Sc</td>
-                  <td>UI/UX Design</td>
-                  <td><span class="badge active">Active</span></td>
-                  <td class="actions">
-                    <button class="act-btn edit">
-                      <i class="fas fa-pen"></i>
-                    </button>
-                    <button class="act-btn delete">
-                      <i class="fas fa-trash"></i>
-                    </button>
-                  </td>
-                </tr>
-                <tr>
-                  <td>5</td>
-                  <td>Arjun</td>
-                  <td>Mehta</td>
-                  <td>Nitin Mehta</td>
-                  <td>29-06-2001</td>
-                  <td>9001122334</td>
-                  <td>arjun.mehta@email.com</td>
-                  <td>B.Tech</td>
-                  <td>Web Development</td>
-                  <td><span class="badge active">Active</span></td>
-                  <td class="actions">
-                    <button class="act-btn edit">
-                      <i class="fas fa-pen"></i>
-                    </button>
-                    <button class="act-btn delete">
-                      <i class="fas fa-trash"></i>
-                    </button>
-                  </td>
-                </tr>
-                <tr>
-                  <td>6</td>
-                  <td>Pooja</td>
-                  <td>Singh</td>
-                  <td>Manoj Singh</td>
-                  <td>02-03-2002</td>
-                  <td>8945612300</td>
-                  <td>pooja.singh@email.com</td>
-                  <td>B.A</td>
-                  <td>Digital Marketing</td>
-                  <td><span class="badge inactive">Inactive</span></td>
-                  <td class="actions">
-                    <button class="act-btn edit">
-                      <i class="fas fa-pen"></i>
-                    </button>
-                    <button class="act-btn delete">
-                      <i class="fas fa-trash"></i>
-                    </button>
-                  </td>
-                </tr>
-                <tr>
-                  <td>7</td>
-                  <td>Karan</td>
-                  <td>Joshi</td>
-                  <td>Deepak Joshi</td>
-                  <td>14-09-2001</td>
-                  <td>9870098765</td>
-                  <td>karan.joshi@email.com</td>
-                  <td>M.Tech</td>
-                  <td>Data Science</td>
-                  <td><span class="badge active">Active</span></td>
-                  <td class="actions">
-                    <button class="act-btn edit">
-                      <i class="fas fa-pen"></i>
-                    </button>
-                    <button class="act-btn delete">
-                      <i class="fas fa-trash"></i>
-                    </button>
-                  </td>
-                </tr>
-                <tr>
-                  <td>8</td>
-                  <td>Neha</td>
-                  <td>Gupta</td>
-                  <td>Amit Gupta</td>
-                  <td>07-12-2002</td>
-                  <td>9123344556</td>
-                  <td>neha.gupta@email.com</td>
-                  <td>B.Com</td>
-                  <td>Cyber Security</td>
-                  <td><span class="badge active">Active</span></td>
-                  <td class="actions">
-                    <button class="act-btn edit">
-                      <i class="fas fa-pen"></i>
-                    </button>
-                    <button class="act-btn delete">
-                      <i class="fas fa-trash"></i>
-                    </button>
-                  </td>
-                </tr>
-                <tr>
-                  <td>9</td>
-                  <td>Rahul</td>
-                  <td>Yadav</td>
-                  <td>Ravi Yadav</td>
-                  <td>19-07-2001</td>
-                  <td>9000988776</td>
-                  <td>rahul.yadav@email.com</td>
-                  <td>B.Sc</td>
-                  <td>UI/UX Design</td>
-                  <td><span class="badge inactive">Inactive</span></td>
-                  <td class="actions">
-                    <button class="act-btn edit">
-                      <i class="fas fa-pen"></i>
-                    </button>
-                    <button class="act-btn delete">
-                      <i class="fas fa-trash"></i>
-                    </button>
-                  </td>
-                </tr>
-                <tr>
-                  <td>10</td>
-                  <td>Simran</td>
-                  <td>Kaur</td>
-                  <td>Gurmeet Kaur</td>
-                  <td>25-10-2002</td>
-                  <td>9112233445</td>
-                  <td>simran.kaur@email.com</td>
-                  <td>M.Com</td>
-                  <td>Digital Marketing</td>
-                  <td><span class="badge active">Active</span></td>
-                  <td class="actions">
-                    <button class="act-btn edit">
-                      <i class="fas fa-pen"></i>
-                    </button>
-                    <button class="act-btn delete">
-                      <i class="fas fa-trash"></i>
-                    </button>
-                  </td>
-                </tr>
+               <?php 
+    
+    $conn = mysqli_connect('localhost','root','jeetu2005#','auth');
+    $query = "SELECT * FROM students";
+    $result = mysqli_query($conn, $query);
+
+    $i = 1;
+    while($row = mysqli_fetch_assoc($result)) {
+    ?>
+    <tr>
+        <td><?php echo $i++; ?></td>
+        <td><?php echo $row['first_name']; ?></td>
+        <td><?php echo $row['last_name']; ?></td>
+        <td><?php echo $row['father_name']; ?></td>
+        <td><?php echo $row['date_of_birth']; ?></td>
+        <td><?php echo $row['contact_no']; ?></td>
+        <td><?php echo $row['email']; ?></td>
+        <td><?php echo $row['qualification']; ?></td>
+        <td><?php echo $row['course']; ?></td>
+        <td><?php echo $row['status']; ?></td>
+        <td class="actions">
+            <a href=""><button class="act-btn edit"><i class="fas fa-pen"></i></button></a>
+            
+            <a href="delete_stud.php?id=<?php echo $row['student_id']; ?>">
+                <button class="act-btn delete"><i class="fas fa-trash"></i></button>
+            </a>
+        </td>
+    </tr>
+    <?php } ?>
               </tbody>
             </table>
           </div>
@@ -328,19 +247,36 @@
     </div>
   </body>
   <script>
-    const getStudentData = async ()=>{
-      try{
-          let response = await fetch("get_studData.php");
-          data = await response.json();
-          document.getElementById('total_studcount').innerText = data.totalStudent;
-          
-      }
-      catch(error){
-          console.error("error fetching data",error);
-      }
-    }
+    const studForm = document.querySelector(".modal-overlay");
+    const addbtn = document.querySelector(".btn-add");
+    const closebtn = document.querySelector(".close-btn");
 
-    getStudentData()
+    closebtn.addEventListener("click",()=>{
+      studForm.style.display = "none"
+    })
+    
+    addbtn.addEventListener("click",()=>{
+      studForm.style.display = "flex"
+    })
 
+
+    const getStudentData = async () => {
+      try {
+        let response = await fetch("get_studData.php");
+        data = await response.json();
+        document.getElementById("total_studcount").innerText =
+          data.totalStudent;
+        
+          document.getElementById("active_studcount").innerText =
+          data.activeStudent;
+        
+          document.getElementById("Inactive_studcount").innerText =
+          data.InactiveStudent;
+      } catch (error) {
+        console.error("error fetching data", error);
+      }
+    };
+
+    getStudentData();
   </script>
 </html>

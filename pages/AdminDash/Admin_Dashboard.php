@@ -129,7 +129,7 @@
             </div>
             <div id="cards" class="card2">
               <div class="data2">
-                <h1>55</h1>
+                <h1 id="total_teachcount">55</h1>
                 <h2>Total Teachers</h2>
               </div>
               <div id="card_logo" class="logo2">
@@ -169,6 +169,17 @@
     }
 
     getStudentData()
+
+    const totalTeach = ()=>{
+      const storedData = JSON.parse(localStorage.getItem("teachersData")) || [];
+
+  
+      const total = storedData.length;
+      document.getElementById("total_teachcount").innerText = total;
+    }
+
+    totalTeach()
+
 
   </script>
 </html>

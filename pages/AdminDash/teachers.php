@@ -122,7 +122,7 @@
           <div class="cardSect">
             <div id="cards" class="card1">
               <div class="data1">
-                <h1>50</h1>
+                <h1 id="teach_Count">50</h1>
                 <h2>Total teachers</h2>
               </div>
               <div id="card_logo" class="logo1">
@@ -131,7 +131,7 @@
             </div>
             <div id="cards" class="card2">
               <div class="data2">
-                <h1>55</h1>
+                <h1 id="ActivTeach_Count">55</h1>
                 <h2>Active Teachers</h2>
               </div>
               <div id="card_logo" class="logo2">
@@ -207,12 +207,22 @@
     };
     render();
 
-    
-    const save = () => {
+    const updateCount = ()=>
+    {
+        let totalTeach = list.length;
+        document.getElementById('teach_Count').innerText = totalTeach;
+
+        let activTeach = list.filter((t)=> t.status == 'Active').length;
+        document.getElementById('ActivTeach_Count').innerText = activTeach;
+
+    }
+      const save = () => {
       localStorage.setItem("teachersData", JSON.stringify(list));
       render();
-    };
+      updateCount();
+      };
 
+      updateCount()
     
     document
       .getElementById("addBtn")

@@ -142,13 +142,13 @@
                 <i class="ri-book-open-fill"></i>
               </div>
               <div class="data1">
-                <h1>1500</h1>
+                <h1 id="total_Course">1500</h1>
                 <h2>Total Courses</h2>
               </div>
             </div>
             <div id="cards" class="card2">
               <div class="data2">
-                <h1>55</h1>
+                <h1 id="active_Course">55</h1>
                 <h2>Active Courses</h2>
               </div>
               <div id="card_logo" class="logo2">
@@ -246,12 +246,21 @@
         .join("");
     };
     render();
+        const updateCount = ()=>
+    {
+        let totalCourse = list.length;
+        document.getElementById('total_Course').innerText = totalCourse;
 
+        let activCourse = list.filter((t)=> t.status == 'Active').length;
+        document.getElementById('active_Course').innerText = activCourse;
+
+    }
     const save = () => {
       localStorage.setItem("courseData", JSON.stringify(list));
       render();
+      updateCount();
     };
-
+      updateCount();
     document
       .getElementById("addBtn")
       .addEventListener("click", () => (courseForm.style.display = "flex"));
