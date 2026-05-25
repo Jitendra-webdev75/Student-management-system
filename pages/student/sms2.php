@@ -15,6 +15,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0" />
     <title>Student Dashboard</title>
     <link rel="stylesheet" href="sms2.css" />
+    <link rel="stylesheet" href="leftPannel.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
@@ -26,7 +27,7 @@
         <h1><i class="fa-solid fa-graduation-cap"></i> Student Panel</h1>
 
         <div class="menu">
-          <a href="sms2.php" class="courselink"
+          <a href="sms2.php" class="courselink active"
             ><i class="fa-solid fa-house"></i> Dashboard</a
           >
           <a href="profile.php" class="courselink"

@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Student Course Dashboard</title>
-<link rel="stylesheet" href="sms2.css">
 <link rel="stylesheet" href="course.css">
+<link rel="stylesheet" href="leftPannel.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
@@ -22,7 +22,7 @@
           <a href="profile.php" class="courselink"
             ><i class="fa-regular fa-user"></i> Profile</a
           >
-          <a href="Course.php" class="courselink"
+          <a href="Course.php" class="courselink active"
             ><i class="fa-solid fa-book"></i> Courses</a
           >
           <a href="stu_result.php" class="courselink"

@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
     <title>Document</title>
     <link rel="stylesheet" href="profile.css">
+    <link rel="stylesheet" href="leftPannel.css">
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
@@ -13,15 +14,15 @@
 
       <div class="menu">
         <a href="sms2.php" class="courselink"><i class="fa-solid fa-house"></i> Dashboard</a>
-        <a href="profile.php" class="courselink"><i class="fa-regular fa-user"></i> Profile</a>
+        <a href="profile.php" class="courselink active"><i class="fa-regular fa-user"></i> Profile</a>
         <a href="Course.php" class="courselink"><i class="fa-solid fa-book"></i> Courses</a>
         <a href="stu_result.php" class="courselink"><i class="fa-solid fa-trophy"></i> Results</a>
         <a href="../homepage/logout.php" class="courselink"><i class="fa-solid fa-angle-left"></i> Logout</a>
       </div>
     </div>
     </header>
-     <main class="">
-        <!--  -->
+     <main >
+        
           <div class="center">
            <div class="profile">
             <br>
@@ -43,9 +44,7 @@
                 </span>
             </div>
             
-              <span class="editbtn">
-                <button>Edit profile</button>
-              </span>
+              
 
           </div>            
         </div>

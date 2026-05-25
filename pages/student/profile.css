@@ -2,59 +2,23 @@
   margin: 0px;
   padding: 0px;
 }
-body {
-}
+
 .center {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.sidebar {
-  width: 300px;
-  background: linear-gradient(130deg, rgb(0, 0, 0) 0%, #004d4d 50%, aqua 100%);
-  padding: 25px 20px;
-  color: #fff;
-  position: fixed;
-  height: 100vh;
-}
 
-.sidebar h1 {
-  text-align: center;
-  margin-bottom: 35px;
-  font-size: 24px;
-  font-weight: bold;
-}
-
-.menu {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
-
-.courselink {
-  /* background: rgb(45, 113, 113); */
-  padding: 14px 20px;
-  text-decoration: none;
-  color: white;
-  border-radius: 5px;
-  row-gap: 40px;
-}
-a:hover {
-  background-color: #4e81d3;
-}
-/*  */
 main {
-  width: 75%;
-  height: 100vh;
-  margin-left: 25%;
-  /* background-color: aqua; */
-  /* margin-top: 20px; */
+  margin-left: 250px;
+  width: calc(100% - 250px);
+  min-height: 100vh;
+  padding: 20px;
+  background-color: #f9f9f9;
 }
 .profile {
   width: 90%;
-  /* height: 80px; */
   background-color: #fff;
-  /* margin-top: 10px; */
 }
 .editprofile {
   width: 90%;
@@ -90,16 +54,6 @@ main {
   border-radius: 15px;
   color: #065f46;
   background-color: #d1fae5;
-}
-.editbtn {
-  margin: 20px;
-}
-.editbtn button {
-  border-radius: 10px;
-  border: 1px solid #d4e3ff;
-  padding: 5px 25px 5px 25px;
-  background-color: #eff4ff;
-  color: #0060ac;
 }
 
 /*  */

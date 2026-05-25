@@ -4,6 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Student Dashboard</title>
+    <link rel="stylesheet" href="stud_result.css" />
+    <link rel="stylesheet" href="leftPannel.css" class="css">
 
     <!-- Font Awesome -->
     <link
@@ -11,46 +13,31 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     />
 
-    <!-- External CSS -->
-    <link rel="stylesheet" href="stud_result.css" />
   </head>
   <body>
     <div class="container">
       <!-- Sidebar -->
-      <aside class="sidebar">
-        <div class="logo">
-          <i class="fa-solid fa-graduation-cap"></i>
-          <h2>Results</h2>
+      <div class="sidebar">
+        <h1><i class="fa-solid fa-graduation-cap"></i> Student Panel</h1>
+
+        <div class="menu">
+          <a href="sms2.php" class="courselink "
+            ><i class="fa-solid fa-house"></i> Dashboard</a
+          >
+          <a href="profile.php" class="courselink"
+            ><i class="fa-regular fa-user"></i> Profile</a
+          >
+          <a href="Course.php" class="courselink"
+            ><i class="fa-solid fa-book"></i> Courses</a
+          >
+          <a href="stu_result.php" class="courselink active"
+            ><i class="fa-solid fa-trophy"></i> Results</a
+          >
+          <a href="../homepage/logout.php" class="courselink"
+            ><i class="fa-solid fa-angle-left"></i> Logout</a
+          >
         </div>
-
-        <ul class="menu">
-          <li>
-            <a href="sms2.php"><i class="fa-solid fa-house"></i> Dashboard</a>
-          </li>
-
-          <li>
-            <a href="profile.php"
-              ><i class="fa-regular fa-user"></i> Profile</a
-            >
-          </li>
-
-          <li>
-            <a href="Course.php"><i class="fa-solid fa-book"></i> Courses</a>
-          </li>
-
-          <li>
-            <a href="stu_result.php"
-              ><i class="fa-solid fa-square-poll-vertical"></i> Results</a
-            >
-          </li>
-
-          <li class="logout">
-            <a href="../homepage/logout.php"
-              ><i class="fa-solid fa-right-from-bracket"></i> Logout</a
-            >
-          </li>
-        </ul>
-      </aside>
+      </div>
 
       <!-- Main Content -->
       <main class="main-content">
@@ -65,7 +52,7 @@
             <i class="fa-regular fa-bell"></i>
 
             <div class="profile">
-              <img src="/Project/images/man.jpeg" alt="" />
+              <img src="../../images/man.jpeg" alt="" />
 
               <span>Hello, Student</span>
             </div>
