@@ -1,163 +1,211 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="Course.css">
-    <link rel="stylesheet" href="sms2.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Course Dashboard</title>
+<link rel="stylesheet" href="sms2.css">
+<link rel="stylesheet" href="course.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
-
 <body>
-    <header>
-         <div class="sidebar">
-      <h1> <i class="fa-solid fa-graduation-cap"></i> Student Courses</h1>
-      <div class="menu">
-        <a href="sms2.php" class="courselink"><i class="fa-solid fa-house"></i> Dashboard</a>
-        <a href="profile.php" class="courselink"><i class="fa-regular fa-user"></i> Profile</a>
-        <a href="Course.php" class="courselink"><i class="fa-solid fa-book"></i> Courses</a>
-        <a href="stu_result.php" class="courselink"><i class="fa-solid fa-trophy"></i> Results</a>
-        <a href="../homepage/logout.php" class="courselink"><i class="fa-solid fa-angle-left"></i> Logout</a>
+
+<div class="container">
+<!-- sidebar -->
+ <div class="sidebar">
+        <h1><i class="fa-solid fa-graduation-cap"></i> Student Panel</h1>
+
+        <div class="menu">
+          <a href="sms2.php" class="courselink"
+            ><i class="fa-solid fa-house"></i> Dashboard</a
+          >
+          <a href="profile.php" class="courselink"
+            ><i class="fa-regular fa-user"></i> Profile</a
+          >
+          <a href="Course.php" class="courselink"
+            ><i class="fa-solid fa-book"></i> Courses</a
+          >
+          <a href="stu_result.php" class="courselink"
+            ><i class="fa-solid fa-trophy"></i> Results</a
+          >
+          <a href="../homepage/logout.php" class="courselink"
+            ><i class="fa-solid fa-angle-left"></i> Logout</a
+          >
+        </div>
       </div>
-    </div>
-    </header>
-    <div class="main">
-        <div class="head">
-            <h3>My Course</h3>
-        </div>
-        <div class="navbar">
-            <div class="navlink">
-                <div class="card card1">
-                    <div class="logo logo1">
-                        <i class="fa-solid fa-book-open"></i>
-                    </div>
-                    <div class="text">
-                        <span>3</span>
-                        <p>Enrolled Course</p>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="logo logo2">
-                        <i class="fa-solid fa-check"></i>
-                    </div>
-                    <div class="text">
-                        <span>1</span>
-                        <p>Completed</p>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="logo logo3">
-                        <i class="fa-regular fa-clock"></i>
-                    </div>
-                    <div class="text">
-                        <span>1</span>
-                        <p>In Progress</p>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="logo logo4">
-                        <i class="fa-solid fa-list"></i>
-                    </div>
-                    <div class="text">
-                        <span>3</span>
-                        <p>Total Course</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="head2">
-            <p>Enrolled Course</p>
-        </div>
-        <div class="head3">
-            <span>Course</span>
-            <span>Instructor</span>
-            <span>Progress</span>
-            <span> Status</span>
-            <span>Action</span>
-        </div>
-        <div class="course-about">
-            <div class="course1">
-                <div class="course1-details">
-                    <img src="../../images/python.jpeg" alt="">
-                    <div class="course-text">
-                        <h3>Python</h3>
-                        <p>Learn Python from<br> basic to advance</p>
-                    </div>
-                </div>
-                <div class="instructor">
-                    <div id="user">
-                    <i class="fa-solid fa-circle-user"></i>
-                    </div>
-                    <p>jatin</p>
-                </div>
-                <div class="progress">
-                    <h4>70%</h4>
-                    <div class="fill">
-                        <div class="innerfill"></div>
-                    </div>
-                </div>
-                <div class="status">
-                    <h4>In Progress</h4>
-                </div>
-                <div class="Action">Continue</div>
-            </div>
-             <div class="course2">
-                <div class="course1-details">
-                    <img src="../../images/html.jpeg" alt="" id="img2">
-                     <div class="course-text">
-                        <h3>Web Development</h3>
-                        <p>HTML CSS,JavaScript for<br>beginner</p>
-                    </div>
-                </div>
-                 <div class="instructor instructor1">
-                    <div class="user user1">
-                    <i class="fa-solid fa-circle-user"></i>
-                    </div>
-                    <p>Rahul</p>
-                </div>
-                 <div class="progress progress1">
-                    <h4>90%</h4>
-                    <div class="fill">
-                        <div class="innerfill innerfill1"></div>
-                    </div>
-                </div> 
-                <div class="status status1">
-                    <h4>In Progress</h4>
-                </div>
-                <div class="Action">Continue</div>
-            </div>
-            <div class="course3">
-                  <div class="course1-details">
-                    <img src="../../images/c.png" alt="">
-                    <div class="course-text">
-                        <h3>C Programming</h3>
-                        <p>Learn C language step<br>by step</p>
-                    </div>
-                </div>
-                <div class="instructor instructor2">
-                    <div class="user user3">
-                    <i class="fa-solid fa-circle-user"></i>
-                    </div>
-                    <p>Aman</p>
-                </div>
-                <div class="progress progress2">
-                    <h4>50%</h4>
-                    <div class="fill">
-                        <div class="innerfill innerfill2"></div>
-                    </div>
-                </div>
-                <div class="status status2">
-                    <h4>In Progress</h4>
-                </div>
-                <div class="Action">Continue</div>
-            </div>
-            </div> 
-      </div> 
 
+<div class="main-content">
+
+<h1>My Courses</h1>
+
+<div class="cards">
+
+<div class="card">
+<div class="icon pink">
+<i class="fa-solid fa-book"></i>
+</div>
+<div>
+<h2>3</h2>
+<p>Enrolled Course</p>
+</div>
+</div>
+
+<div class="card">
+<div class="icon green">
+<i class="fa-solid fa-circle-check"></i>
+</div>
+<div>
+<h2>1</h2>
+<p>Completed</p>
+</div>
+</div>
+
+<div class="card">
+<div class="icon yellow">
+<i class="fa-solid fa-spinner"></i>
+</div>
+<div>
+<h2>1</h2>
+<p>In Progress</p>
+</div>
+</div>
+
+<div class="card">
+<div class="icon blue">
+<i class="fa-solid fa-layer-group"></i>
+</div>
+<div>
+<h2>3</h2>
+<p>Total Course</p>
+</div>
+</div>
+
+</div>
+
+<div class="table-box">
+
+<div class="table-title">Enrolled Course</div>
+
+<table>
+<thead>
+<tr>
+<th>Course</th>
+<th>Instructor</th>
+<th>Progress</th>
+<th>Status</th>
+<th>Action</th>
+</tr>
+</thead>
+<!-- courses -->
+<tbody>
+   
+<tr>
+<td>
+<div class="course">
+<i class="fa-brands fa-python course-icon"></i>
+<div>
+<h4>Python</h4>
+<p>Learn Python from basic to advance</p>
+</div>
+</div>
+</td>
+
+<td><i class="fa-solid fa-user instructor"></i> Jatin</td>
+
+<td>
+<span>70%</span>
+<div class="progress-bar">
+<div class="progress" style="width:70%"></div>
+</div>
+</td>
+
+<td><span class="status">In Progress</span></td>
+
+<td><button>Continue</button></td>
+</tr>
+
+<tr>
+<td>
+<div class="course">
+<i class="fa-solid fa-code course-icon"></i>
+<div>
+<h4>Web Development</h4>
+<p>HTML CSS JavaScript for beginner</p>
+</div>
+</div>
+</td>
+
+<td><i class="fa-solid fa-user instructor"></i> Rahul</td>
+
+<td>
+<span>90%</span>
+<div class="progress-bar">
+<div class="progress" style="width:90%"></div>
+</div>
+</td>
+
+<td><span class="status">In Progress</span></td>
+
+<td><button>Continue</button></td>
+</tr>
+
+<tr>
+<td>
+<div class="course">
+<i class="fa-solid fa-c course-icon"></i>
+<div>
+<h4>C Programming</h4>
+<p>Learn C language step by step</p>
+</div>
+</div>
+</td>
+
+<td><i class="fa-solid fa-user instructor"></i> Aman</td>
+
+<td>
+<span>50%</span>
+<div class="progress-bar">
+<div class="progress" style="width:50%"></div>
+</div>
+</td>
+
+<td><span class="status">In Progress</span></td>
+
+<td><button>Continue</button></td>
+</tr>
+
+</tbody>
 </table>
-    
-</body>
 
+</div>
+ <!-- tasks -->
+<div class="bottom-section">
+
+<div class="box">
+<h3><i class="fa-regular fa-calendar"></i> Upcoming Tasks</h3>
+<ul>
+<li>Python Quiz 3 - Due: May 28</li>
+<li>HTML/CSS Project - Due: June 02</li>
+</ul>
+</div>
+<!-- Announcement section -->
+<div class="box">
+<h3><i class="fa-solid fa-bullhorn"></i> Announcements</h3>
+<ul>
+<li>Live Q&A session this Friday</li>
+<li> Server maintenance on Sunday</li>
+</ul>
+</div>
+
+</div>
+
+<!-- <footer>
+© 2026 Student Management System
+</footer> -->
+
+</div>
+
+</div>
+
+</body>
 </html>
