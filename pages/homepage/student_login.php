@@ -79,7 +79,7 @@ if (isset($_SESSION['student_id'])) {
                 placeholder="password"
                 name="password"
               /><br />
-              <span class="logintext">Forgot your password?</span><br />
+              
               <input
                 type="submit"
                 name="login_submit"

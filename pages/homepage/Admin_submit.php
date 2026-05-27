@@ -7,7 +7,7 @@ $email = $_POST['email'];
 $password = $_POST['password'];
 
 // Static admin login
-$admin_email = "monika@gmail.com";
+$admin_email = "monika_mam@gmail.com";
 $admin_password = "12345";
 
 if($email == $admin_email && $password == $admin_password){
