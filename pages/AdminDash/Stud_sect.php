@@ -150,7 +150,7 @@
           <div class="topbar-right">
             <div class="search-box">
               <i class="fas fa-search"></i>
-              <input type="text" placeholder="Search students..." />
+              <input type="text" id="searchInput" placeholder="Search students..."  onkeyup="searchStudent()"/>
             </div>
             <button class="btn-add">
               <i class="fas fa-plus"></i> Add Student
@@ -278,5 +278,18 @@
     };
 
     getStudentData();
+
+    function searchStudent() {
+    let query = document.getElementById('searchInput').value;
+    let xhr = new XMLHttpRequest();
+    
+    xhr.open('GET', 'search.php?q=' + query, true);
+    xhr.onload = function() {
+        if(this.status == 200) {
+            document.querySelector('tbody').innerHTML = this.responseText;
+        }
+    }
+    xhr.send();
+}
   </script>
 </html>
