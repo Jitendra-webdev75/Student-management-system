@@ -13,6 +13,9 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     />
 
+    <!-- for result download  -->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
   </head>
   <body>
     <div class="container">
@@ -113,7 +116,7 @@
         <!-- Table + Performance -->
         <div class="content">
           <!-- Table -->
-          <div class="table-section">
+          <div class="table-section" id="marksheet-content">
             <div class="section-title">
               <h2>Subject Wise Marks</h2>
             </div>
@@ -186,10 +189,26 @@
               <p>SGPA <span>8.25</span></p>
             </div>
 
-            <button>Download Marksheet</button>
+            <button onclick="downloadPDF()"
+            >Download Marksheet</button>
           </div>
         </div>
       </main>
     </div>
   </body>
+
+  <script>
+    function downloadPDF() {
+    const element = document.getElementById('marksheet-content'); 
+    const opt = {
+        margin:       0.5,
+        filename:     'Student_Marksheet.pdf',
+        image:        { type: 'jpeg', quality: 0.98 },
+        html2canvas:  { scale: 2 }, 
+        jsPDF:        { unit: 'in', format: 'letter', orientation: 'landscape' } 
+    };
+
+    html2pdf().set(opt).from(element).save();
+}
+  </script>
 </html>

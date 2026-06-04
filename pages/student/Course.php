@@ -93,7 +93,7 @@
 <th>Instructor</th>
 <th>Progress</th>
 <th>Status</th>
-<th>Action</th>
+<!-- <th>Action</th> -->
 </tr>
 </thead>
 <!-- courses -->
@@ -121,7 +121,7 @@
 
 <td><span class="status">In Progress</span></td>
 
-<td><button>Continue</button></td>
+<!-- <td><button>Continue</button></td> -->
 </tr>
 
 <tr>
@@ -146,7 +146,7 @@
 
 <td><span class="status">In Progress</span></td>
 
-<td><button>Continue</button></td>
+<!-- <td><button>Continue</button></td> -->
 </tr>
 
 <tr>
@@ -171,7 +171,7 @@
 
 <td><span class="status">In Progress</span></td>
 
-<td><button>Continue</button></td>
+<!-- <td><button>Continue</button></td> -->
 </tr>
 
 </tbody>

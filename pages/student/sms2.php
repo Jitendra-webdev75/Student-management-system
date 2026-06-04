@@ -5,6 +5,7 @@
     header("Location: student_login.php");
     exit();
 }
+  $student_name = $_SESSION['student_name'];
 ?>
 
 
@@ -50,7 +51,7 @@
         <!-- profile section -->
         <div class="top-box">
           <div>
-            <h1>Welcome, Student</h1>
+            <h1>Welcome, <?php echo htmlspecialchars(ucwords($student_name)); ?></h1>
             <p>Here is your academic overview.</p>
           </div>
 

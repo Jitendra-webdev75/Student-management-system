@@ -5,10 +5,34 @@
   </head>
   <body>
     <?php
+    $conn = mysqli_connect('localhost','root','jeetu2005#','auth');
 session_start();
 if (isset($_SESSION['student_id'])) {
     header("Location: ../student/sms2.php"); 
     exit();
+}
+
+if (isset($_POST['login_btn'])) {
+    $email = mysqli_real_escape_string($conn, $_POST['email']);
+    $password = mysqli_real_escape_string($conn, $_POST['password']); 
+
+
+    $query = "SELECT * FROM students WHERE email='$email' AND password='$password'";
+    $result = mysqli_query($conn, $query);
+
+    if (mysqli_num_rows($result) == 1) {
+        $row = mysqli_fetch_assoc($result);
+        
+
+        $_SESSION['student_id'] = $row['id'];
+        $_SESSION['student_name'] = $row['name'];
+        
+        
+        header("Location: sms2.php");
+        exit();
+    } else {
+        $error = "Invalid Email or Password!";
+    }
 }
 
 ?>
@@ -33,10 +57,10 @@ if (isset($_SESSION['student_id'])) {
         </span>
       </div>
     </header>
-    <!-- main form -->
+
     <main class="center">
       <div class="formbox center">
-        <!-- leftbox -->
+
         <div class="leftbox">
           <div class="leftbg center">
             <span
@@ -59,9 +83,9 @@ if (isset($_SESSION['student_id'])) {
           </div>
         </div>
 
-        <!-- rightbox -->
+
         <div class="rightbox center">
-          <!--  -->
+
           <div id="studentform">
             <span id="admintext">Students login</span><br />
             <span class="logintext">Login in to your account to continue</span
@@ -98,11 +122,11 @@ if (isset($_SESSION['student_id'])) {
               >
             </div>
           </div>
-          <!--  -->
+
         </div>
       </div>
     </main>
-    <!--  -->
+
     <footer>
       <span><b>EduPorta</b></span>
       <span>&copy; 2026 EduPortal Institution.</span>
@@ -122,9 +146,7 @@ if (isset($_SESSION['student_id'])) {
     width: 100%;
     height: 100vh;
     background-color: #f8f9ff;
-    /* background-color: #edf0ff;    */
 
-    /* font-family: inter; */
     position: relative;
   }
   a {
@@ -167,7 +189,7 @@ if (isset($_SESSION['student_id'])) {
     border: 0.4px solid rgb(0, 255, 255, 0.4);
     border-radius: 8px;
   }
-  /* box */
+
   main {
     width: 100%;
     height: 80%;
@@ -218,7 +240,6 @@ if (isset($_SESSION['student_id'])) {
     height: 100%;
     overflow: hidden;
     flex-direction: column;
-    /* justify-content: space-between; */
   }
 
   #studentform {

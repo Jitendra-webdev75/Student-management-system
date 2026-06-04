@@ -1,3 +1,14 @@
+<?php
+ session_start();
+
+  if(!isset($_SESSION['student_id'])){
+    header("Location: student_login.php");
+    exit();
+}
+
+$student_name = $_SESSION['student_name'];
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -37,7 +48,7 @@
             <div class="editprofile-1 center">
                 <span><img src="../../images/boyavatat.avif" alt="" height="120px"></span>
                 <span class="studetail">
-                    <div class="stuname"><h2>Rohit</h2></div>
+                    <div class="stuname"><h2><?php echo htmlspecialchars(ucwords($student_name)); ?></h2></div>
                     <div class="stuid">Student ID: <b>ST123</b></div>
                     <div class="stucourse">BCA - 2nd Year</div>
                     <div class="active">Active</div>
