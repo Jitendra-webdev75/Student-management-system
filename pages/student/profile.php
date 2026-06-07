@@ -7,6 +7,14 @@
 }
 
 $student_name = $_SESSION['student_name'];
+$student_Lastname = $_SESSION['student_Lastname'];
+$student_id = $_SESSION['student_id'];
+$father_name = $_SESSION['father_name'];
+$dob = $_SESSION['dob'];
+$course_name = $_SESSION['course_name'];
+$email_id = $_SESSION['email_id'];
+$contact_no = $_SESSION['contact_no'];
+$status_bar = $_SESSION['status_bar'];
 ?>
 
 <!DOCTYPE html>
@@ -46,12 +54,12 @@ $student_name = $_SESSION['student_name'];
           <div class="editprofile ">
 
             <div class="editprofile-1 center">
-                <span><img src="../../images/boyavatat.avif" alt="" height="120px"></span>
+                <span><img src="../../images/boyAvtar.png" alt="" height="120px"></span>
                 <span class="studetail">
                     <div class="stuname"><h2><?php echo htmlspecialchars(ucwords($student_name)); ?></h2></div>
-                    <div class="stuid">Student ID: <b>ST123</b></div>
-                    <div class="stucourse">BCA - 2nd Year</div>
-                    <div class="active">Active</div>
+                    <div class="stuid">Student ID: <b><?php echo $student_id ?></b></div>
+                    <div class="stucourse">Course:<b> <?php echo htmlspecialchars(($course_name)); ?></b></div>
+                    <div class="active"><b> <?php echo htmlspecialchars(($status_bar)); ?></b></div>
                 </span>
             </div>
             
@@ -61,7 +69,7 @@ $student_name = $_SESSION['student_name'];
         </div>
           <!--  -->
           <div class="center">
-               <div class="card">
+               <div class="card" style="width: 70vw;">
           
                 <div class="card-header">
                   👤 Personal Information
@@ -71,43 +79,43 @@ $student_name = $_SESSION['student_name'];
                   <tr>
                     <td class="label">Full Name</td>
                     <td class="colon">:</td>
-                    <td class="value">Rohit Sharma</td>
+                    <td class="value"><?php echo htmlspecialchars(ucwords($student_name . $student_Lastname)); ?></td>
                   </tr>
           
                   <tr>
                     <td class="label">Father's Name</td>
                     <td class="colon">:</td>
-                    <td class="value">Rajesh Sharma</td>
+                    <td class="value"><?php echo htmlspecialchars(ucwords($father_name )); ?></td>
                   </tr>
           
                   <tr>
-                    <td class="label">Mother's Name</td>
+                    <td class="label">Student ID</td>
                     <td class="colon">:</td>
-                    <td class="value">Sheela Sharma</td>
+                    <td class="value"><b><?php echo $student_id ?></b></td>
                   </tr>
           
                   <tr>
                     <td class="label">Date of Birth</td>
                     <td class="colon">:</td>
-                    <td class="value">15 Aug 2003</td>
+                    <td class="value"><?php echo htmlspecialchars(($dob)); ?></td>
                   </tr>
           
                   <tr>
-                    <td class="label">Gender</td>
+                    <td class="label">Course</td>
                     <td class="colon">:</td>
-                    <td class="value">Male</td>
+                    <td class="value"><?php echo htmlspecialchars(($course_name)); ?></td>
                   </tr>
           
                   <tr>
                     <td class="label">Email</td>
                     <td class="colon">:</td>
-                    <td class="value">rohitsharma@email.com</td>
+                    <td class="value"><?php echo $email_id?></td>
                   </tr>
           
                   <tr>
                     <td class="label">Phone Number</td>
                     <td class="colon">:</td>
-                    <td class="value">9876543210</td>
+                    <td class="value"><?php echo $contact_no ?></td>
                   </tr>
           
                  
@@ -116,7 +124,7 @@ $student_name = $_SESSION['student_name'];
               </div>
           
               <!--  -->
-              <div class="card aacademic">
+              <!-- <div class="card aacademic">
           
                 <div class="card-header">
                   🎓 Academic Information
@@ -168,7 +176,7 @@ $student_name = $_SESSION['student_name'];
                     <td class="value">ABC College, Indore</td>
                   </tr>
           
-            </table>
+            </table> -->
       
           </div>
       

@@ -11,6 +11,9 @@
 
 main {
   margin-left: 18%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
   width: calc(100% - 250px);
   min-height: 100vh;
   padding: 20px;
@@ -18,7 +21,6 @@ main {
 }
 .profile {
   width: 90%;
-  
 }
 .editprofile {
   width: 90%;
@@ -65,7 +67,6 @@ main {
 }
 
 .card {
-  width: 500px;
   background: #fff;
   border-radius: 12px;
   overflow: hidden;
@@ -113,10 +114,6 @@ tr:last-child td {
   border-bottom: none;
 }
 
-.aacademic {
-  /* padding-bottom: 38px; */
-  margin-left: 20px;
-}
 .summarytext {
   /* width: 100%; */
   padding-left: 5%;
@@ -192,14 +189,7 @@ tr:last-child td {
     flex-direction: column;
     align-items: center;
   }
-  .card {
-    width: 90%;
-    margin-bottom: 15px;
-  }
-  .aacademic {
-    margin-left: 0;
-    padding-bottom: 20px;
-  }
+
   .summary {
     flex-wrap: wrap;
     gap: 12px;

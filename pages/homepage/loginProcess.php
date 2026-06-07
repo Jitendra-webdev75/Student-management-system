@@ -15,6 +15,14 @@ $result = mysqli_query($conn, $sql);
         if($password == $row['password']){
             $_SESSION['student_id'] = $row['student_id'];
             $_SESSION['student_name'] = $row['first_name'];
+            $_SESSION['student_Lastname'] = $row['last_name'];
+            $_SESSION['student_id'] = $row['student_id'];
+            $_SESSION['father_name'] = $row['father_name'];
+            $_SESSION['dob'] = $row['date_of_birth'];
+            $_SESSION['course_name'] = $row['course'];
+            $_SESSION['email_id'] = $row['email'];
+            $_SESSION['contact_no'] = $row['contact_no'];
+            $_SESSION['status_bar'] = $row['status'];
             header("Location:../student/sms2.php");
             exit();          
         }
